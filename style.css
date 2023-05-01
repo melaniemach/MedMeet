@@ -72,8 +72,14 @@ form {
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px 5px 5px 5px;
 }
 
 form input {
   font-family: 'Nunito', sans-serif;
+  padding: 0 10px;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  outline: none;
+  margin-bottom: 10px;
 }
