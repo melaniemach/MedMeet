@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS files/reset.css">
+  <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
+  <link rel="stylesheet" type="text/css" href="../CSS files/form.css">
+  
+</head>
+
+<body>
+  <header class="header-main">
+    <div class="header-main-logo">
+      <img src="../images/drugs.png" alt="logo" size>
+      <div class="company-name">MedMeet</div>
+      <nav class="header-main-nav">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">SIGN UP </a>
+            <div class="dropdown-content">
+              <a href="doctorsu.html">DOCTORS</a>
+              <a href="medicalsu.html">MEDICAL OFFICES</a>
+            </div>
+          </li>
+          <li><a href="login.html">LOGIN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <form action="">
+    <!--Heading for login form-->
+    <div class="form-header">
+      <h3>Login</h3>
+      <p>Sign in with your email and password</p>
+    </div>
+
+    <!--Heading for login form-->
+    <div class="form-container">
+      <!--Email-->
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="Enter Your Email" class="textbox" id="email" required> <br>
+      <!--Password-->
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br>
+      <!--Submit button-->
+      <button type="submit" class="button" value="Login">Login</button>
+      <!--Sign up link-->
+      <p class="register"> Not a member? <br>
+        <a class="doctors" href="doctorsu.html">Doctors, register here!</a> <br>
+        <a class= "medoffice" href="medicalsu.html">Medical offices, register here!</a>
+      </p>
+
+    </div>
+  
+  </form>
+
+</body>
+
+</html>
