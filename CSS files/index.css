@@ -11,9 +11,30 @@ h1 {
     font-size: 48px; 
     margin-bottom: 32px; 
     padding: 20px;
-     background-image:url(../images/0fd3416c.jpeg);
+    background-image:url(../images/0fd3416c.jpeg);
 }
-  
+
+/* Style for the sub 1 heading */
+h2 {
+    font-size: 25px; 
+    margin-bottom: 5px; 
+    padding: 3px;
+}
+
+/* Style for the sub 2 heading */
+h3 {
+    font-size: 20px; 
+    /* margin-bottom: 5px;  */
+    padding: 2px;
+}
+
+/* Style for the sub 3 heading */
+h4 {
+    font-size: 15px; 
+    /* margin-bottom: 5px;  */
+    padding: 2px;
+}
+
 /* Style for the paragraphs */
 p {
     font-size: 20px;
@@ -27,4 +48,30 @@ button {
     border-radius: 8px;
     border: none;
     max-width: 80%; 
+}
+
+.get-started-options h3:hover {
+    opacity: 0.6;
+}
+
+.get-started-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.get-started-options a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 10px;
+  background-color: #091b3c;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: calc(50% - 10px);
+  text-align: center;
+  background-color: rgba(134, 139, 244, 0.1);
 }
