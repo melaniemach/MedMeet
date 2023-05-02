@@ -33,7 +33,7 @@
     </div>
   </header>
 
-  <form method="POST">
+  <form action="PHP files/signup.doctor.inc.php" method="POST">
     <div class="form-header">
       <h3>Doctor Sign Up</h3>
       <p>Sign up with your information</p>
@@ -43,25 +43,25 @@
     <div class="form-container">
       <!--First and last name-->
       <label for="fname">First Name</label>
-      <input type="text" name="firstname" placeholder="Enter Your First Name" class="textbox" id="firstname"
+      <input type="text" name="firstname" placeholder="Enter Your First Name" class="textbox" 
       required> 
       <label for="lname">Last Name</label>
-      <input type="text" name="lastname" placeholder="Enter Your Last Name" class="textbox" id="lastname"
+      <input type="text" name="lastname" placeholder="Enter Your Last Name" class="textbox" 
       required>
       <!--Email-->
     <label for="email">Email</label>
-    <input type="text" name="email" placeholder="Enter Your Email" class="textbox" id="email" required> <br>
+    <input type="text" name="email" placeholder="Enter Your Email" class="textbox" required> <br>
     <!--Password-->
     <label for="password">Password</label>
-    <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br>
+    <input type="password" name="password" placeholder="Enter Your Password" class="textbox" required></br>
       <!--City and ZIP code-->
       <label for="city">City</label>
-      <input type="text" name="city" placeholder="Enter Your City" class="textbox" id="city" required>
+      <input type="text" name="city" placeholder="Enter Your City" class="textbox" required>
       <label for="ZIP">Postal Code</label>
-      <input type="text" name="postalcode" placeholder="Enter Your 5-digit Postal Code" class="textbox" id="postalcode"
+      <input type="text" name="postalcode" placeholder="Enter Your 5-digit Postal Code" class="textbox" 
         required>
       <!--Submit button-->
-      <button type="submit" class="button" value="Register">Register</button>
+      <button type="submit" name="submit" class="button" value="Register">Register</button>
     </div>
   
   </form>
