@@ -30,6 +30,8 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 999;
+  position: fixed;
 }
 
 .header-main-logo {

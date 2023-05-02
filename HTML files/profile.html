@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="profile.php">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+</head>
+<body>
+    <!-- Common profile fields -->
+    <div class="common-field">
+        <h1>User Profile</h1>
+        <h2>Basic Information</h2>
+        <p>Name: <?php echo $fname . ' ' . $lname; ?></p>
+        <p>Email: <?php echo $email; ?></p>
+    </div>
+    
+    <!-- Doctor profile fields -->
+    <div class="doctor-info">
+        <h2>Doctor Information</h2>
+        <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
+        <p>Password: <?php echo $pass; ?></p>
+    </div>
+
+    <!-- Medical office profile fields -->
+    <div class="medical-office-info">
+        <h2>Medical Office Information</h2>
+        <p>Field: <?php echo $field; ?></p>
+        <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
+        <p>Password: <?php echo $pass; ?></p>
+    </div>
+</body>
+</html>
