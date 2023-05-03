@@ -2,18 +2,28 @@
 
 require_once 'dbh.inc.php';
 
-function emptyInputSignup($fname,$lname,$email,$pass,$city,$zip){
-    if(empty($fname) || empty($lname) || empty($email) || empty($pass) || empty($city) || empty($zip)){
+
+function invalidfname($fname){
+    if(!preg_match("/^[a-zA-Z]*$/", $fname)){
         $result = true;
     }
     else{
-        $result = true;
+        $result = false;
     }
     return $result;
 }
 
-function invalidfname($fname){
-    if(!preg_match("/^[a-zA-Z]*$/", $fname)){
+function invalidoname($oname){
+    if(!preg_match("/^[a-zA-Z]*$/", $oname)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+function invalidfield($field){
+    if(!preg_match("/^[a-zA-Z]*$/", $field)){
         $result = true;
     }
     else{

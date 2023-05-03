@@ -24,6 +24,8 @@ if (isset($_POST["submit"])) {
         header("location: ../doctorsu.html?error=invalidemail");
         exit();
     }
+
+    /* DOES NOT WORK */
     if(emailExists($conn, $email) !== false){
         header("location: ../doctorsu.html?error=emailtaken");
         exit();
