@@ -61,7 +61,7 @@ function emailExists($conn, $email){
     }
 
 
-    mysqli_stmt_bind_param($stmt, "ss", $email, $email);
+    mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
