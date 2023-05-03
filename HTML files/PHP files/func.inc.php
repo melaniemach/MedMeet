@@ -67,6 +67,7 @@ function emailExists($conn, $email){
     $resultData = mysqli_stmt_get_result($stmt);
 
     if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
     }
     else{
         $result = false;
