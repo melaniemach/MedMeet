@@ -53,7 +53,7 @@ function invalidemail($email){
 }
 
 function emailExists($conn, $email){
-    $sql ="SELECT * FROM doctors,office WHERE demail = ? OR oemail = ?;";
+    $sql ="SELECT * FROM doctors WHERE demail = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../doctorsu.html?error=stmtfailed");
@@ -67,7 +67,6 @@ function emailExists($conn, $email){
     $resultData = mysqli_stmt_get_result($stmt);
 
     if($row = mysqli_fetch_assoc($resultData)){
-         return $row;
     }
     else{
         $result = false;
@@ -92,5 +91,22 @@ function createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip){
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../doctorsu.html?error=none");
+
+}
+
+function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
+    $sql ="INSERT INTO doctors (oname, oemail, pass, field, city, zip) VALUES (?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../medicalsu.html?error=stmtfailed");
+        exit();
+    }
+
+    $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "ssssss", $oname, $email, $hashedPwd, $field, $city, $zip);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../medicalsu.html?error=none");
 
 }

@@ -31,7 +31,7 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
-    createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip);
+    createOffice($conn,$oname,$email,$pass,$field,$city,$zip);
 }
 else {
     header("location: ../medicalsu.html");
