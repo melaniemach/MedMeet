@@ -5,31 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <!-- CSS styles -->
-    <link rel="stylesheet" href="profile.php">
-    <link rel="stylesheet" type="text/css" href="profile.css">
+    <link rel="stylesheet" href="../CSS files/reset.css">
+    <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
+    <link rel="stylesheet" type="text/css" href="../CSS files/profile.css">
 </head>
 <body>
-    <!-- Common profile fields -->
-    <div class="common-field">
-        <h1>User Profile</h1>
-        <h2>Basic Information</h2>
-        <p>Name: <?php echo $fname . ' ' . $lname; ?></p>
-        <p>Email: <?php echo $email; ?></p>
-    </div>
+    <header class="header-main">
+        <div class="header-main-logo">
+          <img src="../images/drugs.png" alt="logo" size>
+          <div class="company-name">MedMeet</div>
+          <nav class="header-main-nav">
+            <ul>
+              <li><a href="doctorportal.html">HOME</a></li>
+              <li><a href="profile.html">PROFILE</a></li>
+              <li><a href="logout.html">LOGOUT</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
     
     <!-- Doctor profile fields -->
-    <div class="doctor-info">
-        <h2>Doctor Information</h2>
-        <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
-        <p>Password: <?php echo $pass; ?></p>
-    </div>
-
+    <?php if ($email == 'doctor') : ?>
+        <!-- Common profile fields -->
+        <div class="common-field">
+            <h1>User Profile</h1>
+            <h2>Basic Information</h2>
+            <p>Name: <?php echo $fname . ' ' . $lname; ?></p>
+            <p>Email: <?php echo $email; ?></p>
+        </div>
+        <div class="doctor-info">
+            <h2>Doctor Information</h2>
+            <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
+            <p>Password: <?php echo $pass; ?></p>
+        </div>
     <!-- Medical office profile fields -->
-    <div class="medical-office-info">
-        <h2>Medical Office Information</h2>
-        <p>Field: <?php echo $field; ?></p>
-        <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
-        <p>Password: <?php echo $pass; ?></p>
-    </div>
+    <?php elseif ($email == 'medical') : ?>
+        <!-- Common profile fields -->
+        <div class="common-field">
+            <h1>User Profile</h1>
+            <h2>Basic Information</h2>
+            <p>Name: <?php echo $fname . ' ' . $lname; ?></p>
+            <p>Email: <?php echo $email; ?></p>
+        </div>
+        <div class="medical-office-info">
+            <h2>Medical Office Information</h2>
+            <p>Field: <?php echo $field; ?></p>
+            <p>City/Zip: <?php echo $city . '/' . $zip ?></p>
+            <p>Password: <?php echo $pass; ?></p>
+        </div>
+    <?php else: ?>
+        <p>NO INFO FOUND</p>
+    <?php endif; ?>
 </body>
 </html>
