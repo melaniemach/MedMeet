@@ -11,11 +11,12 @@ form {
   padding: 20px;
   margin: 0 auto;
   border-radius: 5px;
+  margin-top: 75px;
   margin-bottom: 50px;
-  position: fixed;
-  top: 50%; 
+  /* position: fixed;
+  top: calc(50% + 50px); 
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .form-header {
@@ -26,7 +27,7 @@ form {
 
 .form-container {
   padding: 20px;
-  height: 100%;
+  height: 80%;
 }
 
 form input {

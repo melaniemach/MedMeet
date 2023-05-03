@@ -30,6 +30,8 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 999;
+  position: fixed;
 }
 
 .header-main-logo {
@@ -120,6 +122,5 @@ a {
 footer {
   background-color: #f2f2f2;
   height: 50px;
-  position: sticky;
   bottom: 0;
 }
