@@ -27,7 +27,13 @@
               <a href="medicalsu.html">MEDICAL OFFICES</a>
             </div>
           </li>
-          <li><a href="login.html">LOGIN</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">LOGIN </a>
+            <div class="dropdown-content">
+                <a href="doctorlogin.html">DOCTORS</a>
+              <a href="medicallogin.html">MEDICAL OFFICES</a>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -36,7 +42,7 @@
   <form action="login.inc.php" method="post">
     <!--Heading for login form-->
     <div class="form-header">
-      <h3>Login</h3>
+      <h3>Medical Office Login</h3>
       <p>Sign in with your email and password</p>
     </div>
 
@@ -52,7 +58,6 @@
       <button type="submit" class="button" value="Login">Login</button>
       <!--Sign up link-->
       <p class="register"> Not a member? <br>
-        <a class="doctors" href="doctorsu.html">Doctors, register here!</a> <br>
         <a class= "medoffice" href="medicalsu.html">Medical offices, register here!</a>
       </p>
 

@@ -39,38 +39,32 @@
     </div>
   </header>
 
-  <form action="../HTML files/PHP files/signup.doctor.inc.php" method="POST">
+  <form action="login.inc.php" method="post">
+    <!--Heading for login form-->
     <div class="form-header">
-      <h3>Doctor Sign Up</h3>
-      <p>Sign up with your informataion</p>
+      <h3>Doctor Login</h3>
+      <p>Sign in with your email and password</p>
     </div>
 
     <!--Heading for login form-->
     <div class="form-container">
-      <!--First and last name-->
-      <label for="fname">First Name</label>
-      <input type="text" name="firstname" placeholder="Enter Your First Name" class="textbox" 
-      required> 
-      <label for="lname">Last Name</label>
-      <input type="text" name="lastname" placeholder="Enter Your Last Name" class="textbox" 
-      required>
       <!--Email-->
-    <label for="email">Email</label>
-    <input type="text" name="email" placeholder="Enter Your Email" class="textbox" required> <br>
-    <!--Password-->
-    <label for="password">Password</label>
-    <input type="password" name="password" placeholder="Enter Your Password" class="textbox" required></br>
-      <!--City and ZIP code-->
-      <label for="city">City</label>
-      <input type="text" name="city" placeholder="Enter Your City" class="textbox" required>
-      <label for="ZIP">Postal Code</label>
-      <input type="text" name="postalcode" placeholder="Enter Your 5-digit Postal Code" class="textbox" 
-        required>
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="Enter Your Email" class="textbox" id="email" required> <br>
+      <!--Password-->
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br>
       <!--Submit button-->
-      <button type="submit" name="submit" class="button" value="Register">Register</button>
+      <button type="submit" class="button" value="Login">Login</button>
+      <!--Sign up link-->
+      <p class="register"> Not a member? <br>
+        <a class="doctors" href="doctorsu.html">Doctors, register here!</a> <br>
+      </p>
+
     </div>
   
   </form>
+
 </body>
 
 </html>
