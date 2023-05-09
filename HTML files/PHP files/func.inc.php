@@ -86,9 +86,9 @@ function createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip){
         exit();
     }
 
-    $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssssss", $fname, $lname, $email, $hashedPwd, $city, $zip);
+
+    mysqli_stmt_bind_param($stmt, "ssssss", $fname, $lname, $email, $pass, $city, $zip);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../doctorsu.html?error=none");
@@ -103,11 +103,34 @@ function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
         exit();
     }
 
-    $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssssss", $oname, $email, $hashedPwd, $field, $city, $zip);
+
+    mysqli_stmt_bind_param($stmt, "ssssss", $oname, $email, $pass, $field, $city, $zip);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../medicalsu.html?error=none");
+
+}
+
+function loginDoctor($conn, $email, $pass){
+    $emailExisted = emailExists($conn, $email);
+    
+    if($emailExisted === false){
+        header("location: ../doctorlogin.html?error=wrongemail");
+        exit();
+    }
+
+    $storedPass = $emailExisted["pass"];
+    $checkPwd = password_verify($pass, $pwdHashed);
+    if($pass !== $storedPass){
+        header("location: ../doctorlogin.html?error=wrongpassword");
+    }
+    else if($pass === $storedPass){
+        session_start();
+        $_SESSION["did"] = $emailExisted["did"];
+        $_SESSION["demail"] = $emailExisted["demail"];
+        header("location: ../index.html");
+        exit();
+    }
 
 }
