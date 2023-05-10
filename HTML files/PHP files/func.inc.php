@@ -96,7 +96,7 @@ function createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip){
 }
 
 function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
-    $sql ="INSERT INTO doctors (oname, oemail, pass, field, city, zip) VALUES (?, ?, ?, ?, ?, ?);";
+    $sql ="INSERT INTO office (oname, oemail, pass, field, city, zip) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../medicalsu.html?error=stmtfailed");
