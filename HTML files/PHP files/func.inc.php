@@ -129,7 +129,7 @@ function loginDoctor($conn, $email, $pass){
         session_start();
         $_SESSION["did"] = $emailExisted["did"];
         $_SESSION["demail"] = $emailExisted["demail"];
-        header("location: ../HTML files/doctorportal.html");
+        header("location: ../doctorportal.html");
         exit();
     }
 

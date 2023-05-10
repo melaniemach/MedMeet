@@ -43,4 +43,5 @@ else
 {
     echo "Could not create office: ". mysqli_error($conn);
 }
+
 ?>
