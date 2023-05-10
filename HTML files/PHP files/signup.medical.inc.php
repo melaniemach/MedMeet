@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     $zip = $_POST["postalcode"];
 
     require_once 'dbh.inc.php';
-    require_once 'func.inc.php';
+    require_once 'med.func.inc.php';
 
     if(invalidoname($oname) !== false){
         header("location: ../medicalsu.html?error=invalidfname");
