@@ -7,10 +7,10 @@
     <title>Doctor Portal</title>
     <link rel="stylesheet" href="../CSS files/reset.css">
     <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
-    
+    <link rel="stylesheet" type="text/css" href="../CSS files/search.css">
 
   </head>
-  
+  <!-- NEED LOGIN PAGE BEFORE DOING THIS -->
   <body>
     <header class="header-main">
       <div class="header-main-logo">
@@ -18,18 +18,23 @@
         <div class="company-name">MedMeet</div>
         <nav class="header-main-nav">
           <ul>
-              <li><a href="medicalportal.html">HOME</a></li>
-              <li><a href="medicalsearch.html">SEARCH</a></li>
-              <li><a href="medicalprofile.html">PROFILE</a></li>
-              <li><a href="logout.html">LOGOUT</a></li>
+            <li><a href="medicalportal.html">HOME</a></li>
+            <li><a href="medicalsearch.html">SEARCH</a></li>
+            <li><a href="medicalprofile.html">PROFILE</a></li>
+            <li><a href="logout.html">LOGOUT</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- MEDICAL portal content here -->
-      
+        <div class="search-container">
+            <form action="../search.medical.inc.php" method="GET">
+                <label for="search">Search for doctors:</label>
+                <input type="text" id="search" name="search" placeholder="Search city or ZIP code">
+                <button type="submit">Search</button>
+            </form>              
+        </div>        
     </main>
 
     <footer>
