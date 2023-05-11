@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +22,9 @@
         <div class="company-name">MedMeet</div>
         <nav class="header-main-nav">
           <ul>
-            <li><a href="doctorportal.html">HOME</a></li>
-            <li><a href="doctorsearch.html">SEARCH</a></li>
-            <li><a href="doctorprofile.html">PROFILE</a></li>
-            <li><a href="logout.html">LOGOUT</a></li>
+            <li><a href="medicalportal.php">PORTAL</a></li>
+            <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
+            <li><a href="PHP files/logout.inc.php">LOG OUT</a></li>
           </ul>
         </nav>
       </div>

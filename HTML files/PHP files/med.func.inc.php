@@ -114,7 +114,7 @@ function loginOffice($conn, $email, $pass){
         $_SESSION["oname"] = $emailExisted["oname"];
         $_SESSION["city"] = $emailExisted["city"];
         $_SESSION["zip"] = $emailExisted["zip"];
-        header("location: ../medicalscheduler.php");
+        header("location: ../medicalportal.php");
         exit();
     }
 

@@ -104,7 +104,6 @@ function loginDoctor($conn, $email, $pass){
     }
 
     $storedPass = $emailExisted["pass"];
-    $checkPwd = password_verify($pass, $storedPass);
     if($pass !== $storedPass){
         header("location: ../doctorlogin.html?error=wrongpassword");
     }
@@ -112,7 +111,7 @@ function loginDoctor($conn, $email, $pass){
         session_start();
         $_SESSION["did"] = $emailExisted["did"];
         $_SESSION["demail"] = $emailExisted["demail"];
-        header("location: ../doctorportal.html");
+        header("location: ../doctorportal.php");
         exit();
     }
 
