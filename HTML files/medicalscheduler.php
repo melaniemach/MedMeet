@@ -22,9 +22,11 @@
       <div class="company-name">MedMeet</div>
       <nav class="header-main-nav">
         <ul>
-          <li><a href="medicalportal.html">PORTAL</a></li>
-          <li><a href="medicalscheduler.html">EVENT SCHEDULER</a></li>
-          <li><a href="PHP files/logout.inc.php">LOG OUT</a></li>
+          <li><a href="medicalportal.php">PORTAL</a></li>
+          <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
+          <li><a href="medicalsearch.php">SEARCH</a></li>
+          <li><a href="medicalprofile.php">PROFILE</a></li>
+          <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>
         </ul>
       </nav>
     </div>
