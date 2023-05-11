@@ -7,7 +7,7 @@
     <title>Doctor Portal</title>
     <link rel="stylesheet" href="../CSS files/reset.css">
     <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS files/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../CSS files/search.css">
 
   </head>
   <!-- NEED LOGIN PAGE BEFORE DOING THIS -->
@@ -28,25 +28,13 @@
     </header>
 
     <main>
-      <h1>Schedule an Appointment</h1>
-        <form action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required><br>
-
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required><br>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
-
-            <input type="submit" value="Submit">
-        </form>
+        <div class="search-container">
+            <form action="../search.doc.inc.php" method="GET">
+                <label for="search">Search for medical offices:</label>
+                <input type="text" id="search" name="search" placeholder="Search city or ZIP code">
+                <button type="submit">Search</button>
+            </form>              
+        </div>        
     </main>
 
     <footer>

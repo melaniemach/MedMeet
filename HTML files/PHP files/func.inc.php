@@ -104,6 +104,7 @@ function loginDoctor($conn, $email, $pass){
     }
 
     $storedPass = $emailExisted["pass"];
+    $checkPwd = password_verify($pass, $storedPass);
     if($pass !== $storedPass){
         header("location: ../doctorlogin.html?error=wrongpassword");
     }
