@@ -111,8 +111,28 @@ function loginOffice($conn, $email, $pass){
         session_start();
         $_SESSION["oid"] = $emailExisted["oid"];
         $_SESSION["oemail"] = $emailExisted["oemail"];
-        header("location: ../medicalportal.html");
+        $_SESSION["oname"] = $emailExisted["oname"];
+        $_SESSION["city"] = $emailExisted["city"];
+        $_SESSION["zip"] = $emailExisted["zip"];
+        header("location: ../medicalscheduler.php");
         exit();
     }
+
+}
+
+function createMeeting($conn,$mname,$oid,$city,$zip,$desc,$time_start,$time_end, $date){
+    $sql ="INSERT INTO `meeting`(`mname`, `office_id`, `city`, `zip`, `desc`, `sTime`, `eTime`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../medicalscheduler.php?error=stmtfailed");
+        exit();
+    }
+
+
+
+    mysqli_stmt_bind_param($stmt, "ssssssss", $mname, $oid, $city, $zip, $desc, $time_start, $time_end, $date);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../medicalscheduler.php?error=none");
 
 }
