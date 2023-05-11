@@ -112,6 +112,11 @@ function loginDoctor($conn, $email, $pass){
         session_start();
         $_SESSION["did"] = $emailExisted["did"];
         $_SESSION["demail"] = $emailExisted["demail"];
+        $_SESSION["fname"] = $emailExisted["fname"];
+        $_SESSION["lname"] = $emailExisted["lname"];
+        $_SESSION["city"] = $emailExisted["city"];
+        $_SESSION["zip"] = $emailExisted["zip"];
+        $_SESSION["pass"] = $emailExisted["pass"];
         header("location: ../doctorportal.php");
         exit();
     }
