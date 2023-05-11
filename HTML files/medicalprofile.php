@@ -32,14 +32,16 @@
         <div class="common-field">
             <h1>User Profile</h1>
             <h2>Basic Information</h2>
-            <p>Name: </p>
-            <p>Email: </p>
+            <p>User ID: <?php echo $_SESSION['oid']; ?></p>
+            <p>Office Name: <?php echo $_SESSION['oname']; ?></p>
+            <p>Email: <?php echo $_SESSION['oemail']; ?></p>
         </div>
         <div class="medical-office-info">
             <h2>Medical Office Information</h2>
-            <p>Field: </p>
-            <p>City/Zip: </p>
-            <p>Password: </p>
+            <p>Field: <?php echo $_SESSION['field'];?></p>
+            <p>City: <?php echo $_SESSION['city'];?></p>
+            <p>ZIP: <?php echo $_SESSION['zip'];?></p>
+            <p>Password: <?php echo $_SESSION['pass'];?></p>
         </div>
 </body>
 </html>
