@@ -35,7 +35,7 @@
     <main>
       <section>
       <h1>Pending Events Requests</h1>
-        <h2>Event Name</h2>
+      <h2>Event Name: </h2>
       </section>
       <table id="eventsTable">
         <tr>
@@ -59,6 +59,37 @@
           echo '<td>' . $event[2] . '</td>';
           echo '<td>' . $event[3] . '</td>';
           echo '<td><button class="button-approve">Approve</button><button class="button-reject">Reject</button></td>';
+          echo '</tr>';
+        }
+        ?>
+      </table>
+
+      <section>
+      <h1>Current Event Participants</h1>
+      <h2>Event Name: </h2>
+      </section>
+      <table id="eventsTable">
+        <tr>
+          <th>From</th>
+          <th>Date & Time</th>
+          <th>City & Zip</th>
+          <th>Message</th>
+          <th>Action</th>
+        </tr>
+        <?php
+        // Example data for demonstration
+        $events = [
+          ['John Doe', '2023-05-12 10:00 AM', 'New York, 12345', 'Lorem ipsum dolor sit amet'],
+          ['Jane Smith', '2023-05-13 2:30 PM', 'Los Angeles, 67890', 'Consectetur adipiscing elit'],
+        ];
+
+        foreach ($events as $event) {
+          echo '<tr>';
+          echo '<td>' . $event[0] . '</td>';
+          echo '<td>' . $event[1] . '</td>';
+          echo '<td>' . $event[2] . '</td>';
+          echo '<td>' . $event[3] . '</td>';
+          echo '<td><button class="button-cancel">Cancel</button></td>';
           echo '</tr>';
         }
         ?>

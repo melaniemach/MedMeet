@@ -1,7 +1,6 @@
 section {
   max-width: 100%; 
   margin: 80px auto 0 auto; 
-  text-align: center; 
 }
 
 h1 {
@@ -10,14 +9,19 @@ h1 {
   z-index: 2;
   margin-top: 50px 0 0;
   padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2);
+  text-decoration: underline;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 28px;
   position: relative;
   z-index: 2;
   margin-top: 50px 0 0;
   padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2); 
 }
 
 table {
@@ -49,6 +53,16 @@ th {
 
 .button-reject {
   background-color: #fc5f5f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-cancel {
+  background-color: #f8da41;
   color: #fff;
   border: none;
   padding: 8px 16px;
