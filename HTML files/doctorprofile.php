@@ -28,18 +28,25 @@
           </nav>
         </div>
     </header>
-
-        <div class="common-field">
-            <h1>User Profile</h1>
-            <h2>Basic Information</h2>
-            <p>Name: <?php echo $_SESSION["fname"] . ' ' . $_SESSION["lname"]; ?></p>
-            <p>Email: <?php echo $_SESSION["demail"]; ?></p>
-        </div>
-        <div class="doctor-info">
+  <main>
+    <div class="container">
+      <div class="common-field">
+        <h1>User Profile</h1>
+          <h2>Basic Information</h2>
+          <p>Name: <?php echo $_SESSION["fname"] . ' ' . $_SESSION["lname"]; ?></p>
+          <p>Email: <?php echo $_SESSION["demail"]; ?></p>
+          <div class="doctor-info">
             <h2>Doctor Information</h2>
             <p>City/Zip: <?php echo $_SESSION["city"] . '/' . $_SESSION["zip"] ?></p>
             <p>Password: <?php echo $_SESSION["pass"]; ?></p>
-        </div>
+          </div>
+      </div>
+    </div>
     
+  </main>
+  
+  <footer>
+        <p>&copy; 2023 MedMeet. All rights reserved.</p>
+    </footer>
 </body>
 </html>
