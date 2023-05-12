@@ -22,7 +22,6 @@
         <nav class="header-main-nav">
           <ul>
             <li><a href="doctorportal.php">PORTAL</a></li>
-            <li><a href="doctorscheduler.php">EVENT SCHEDULER</a></li>
             <li><a href="doctorsearch.php">SEARCH</a></li>
             <li><a href="doctorprofile.php">PROFILE</a></li>
             <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>
@@ -45,15 +44,23 @@
     if(isset($_POST["submit"])){
 
       $entry = $_POST["search"];
-
+      
       require_once 'PHP files/dbh.inc.php';
-      $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry OR city LIKE " . {$entry} . ";";
+      if(is_numeric($entry)){
+        $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry";
+        $sql1 = "SELECT * FROM office WHERE zip = $entry;";
+      }
+      else{
+        $sql = "SELECT COUNT(*) as total FROM office WHERE city LIKE '$entry';";
+        $sql1 = "SELECT * FROM office WHERE city LIKE '$entry';";
+      }
+      
       $result=mysqli_query($conn, $sql);
       $data=mysqli_fetch_assoc($result);
       echo "Total Results:" . $data['total'] . "<br>";
       
-      $sql = "SELECT * FROM office WHERE zip = $entry OR city LIKE " . {$entry} . ";";
-      $retval=mysqli_query($conn, $sql);
+       
+      $retval=mysqli_query($conn, $sql1);
 
       
 
@@ -68,8 +75,8 @@
               ."<td>{$row['city']} </td>"
               ."<td>{$row['zip']} </td>"
               ."</tr></table> <br>";
-              $sql1 = "SELECT * FROM meeting WHERE office_id = $oid;";
-              $retval1=mysqli_query($conn, $sql1);
+              $sql2 = "SELECT * FROM meeting WHERE office_id = $oid;";
+              $retval1=mysqli_query($conn, $sql2);
 
               if(mysqli_num_rows($retval1) > 0)
               {
