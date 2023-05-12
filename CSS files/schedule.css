@@ -1,47 +1,77 @@
-form {
-    width: 80%;
-    max-width: 350px;
-    display: flex;
-    align-self: center;
-    height: fit-content;
-    flex-wrap: wrap;
-    border: 1px solid #1e1e1e;
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 0 auto;
-    border-radius: 5px;
-    margin-top: 75px;
-    margin-bottom: 50px;
-  }
-  
-  form label {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  form input[type="text"], form input[type="email"], form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  form input[type="submit"] {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  form input[type="submit"]:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-  
+section {
+  max-width: 100%; 
+  margin: 80px auto 0 auto; 
+}
+
+h1 {
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px 0 0;
+  padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2);
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 28px;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px 0 0;
+  padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2); 
+}
+
+table {
+  margin: 20px auto 0;
+  width: 80%;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.button-approve {
+  background-color: #6fd472;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button-reject {
+  background-color: #fc5f5f;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-cancel {
+  background-color: #f8da41;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-approve:hover,
+.button-reject:hover {
+  opacity: 0.6;
+}
