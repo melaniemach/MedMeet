@@ -47,12 +47,12 @@
       $entry = $_POST["search"];
 
       require_once 'PHP files/dbh.inc.php';
-      $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry OR city = $entry;";
+      $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry OR city LIKE " . {$entry} . ";";
       $result=mysqli_query($conn, $sql);
       $data=mysqli_fetch_assoc($result);
       echo "Total Results:" . $data['total'] . "<br>";
       
-      $sql = "SELECT * FROM office WHERE city LIKE $entry or zip = $entry;";
+      $sql = "SELECT * FROM office WHERE zip = $entry OR city LIKE " . {$entry} . ";";
       $retval=mysqli_query($conn, $sql);
 
       
