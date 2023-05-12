@@ -22,7 +22,6 @@
             <nav class="header-main-nav">
                 <ul>
                     <li><a href="doctorportal.php">PORTAL</a></li>
-                    <li><a href="doctorscheduler.php">EVENT SCHEDULER</a></li>
                     <li><a href="doctorsearch.php">SEARCH</a></li>
                     <li><a href="doctorprofile.php">PROFILE</a></li>
                     <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>
