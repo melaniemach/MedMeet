@@ -33,13 +33,47 @@
 
     <main>
         <div class="search-container">
-            <form action="../search.doc.inc.php" method="GET">
+            <form action="doctorsearch.php" method="POST">
                 <label for="search">Search for medical offices:</label>
                 <input type="text" id="search" name="search" placeholder="Search city or ZIP code">
-                <button type="submit">Search</button>
+                <button name="submit" type="submit">Search</button>
             </form>              
         </div>        
     </main>
+
+    <?php
+    if(isset($_POST["submit"])){
+
+      $entry = $_POST["search"];
+
+      require_once 'PHP files/dbh.inc.php';
+      $sql = "SELECT COUNT(*) as total FROM office WHERE city = $entry or zip = $entry;";
+      $result=mysqli_query($conn, $sql);
+      $data=mysqli_fetch_assoc($result);
+      echo "Total Results:" . $data['total'] . "<br>"."--------------------------------<br>";
+      
+      $sql = "SELECT * FROM office WHERE city = $entry or zip = $entry;";
+      $retval=mysqli_query($conn, $sql);
+
+      if(mysqli_num_rows($retval) > 0)
+        {
+            while($row = mysqli_fetch_assoc($retval)){
+            echo " Office Name :{$row['oname']} <br> "
+            ."Office Email :{$row['oemail']} <br> "
+            ."Office Field :{$row['field']} <br> "
+            ."Office City :{$row['city']} <br> "
+            ."Office Zip :{$row['zip']} <br> "
+            ."--------------------------------<br>";
+            } //end of while
+        }
+        else
+        {
+            echo " \n 0 results";
+        }
+      mysqli_close($conn);
+    }
+    
+    ?>
 
     <footer>
       <p>&copy; 2023 MedMeet. All rights reserved.</p>
