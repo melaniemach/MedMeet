@@ -116,14 +116,14 @@ function loginOffice($conn, $email, $pass){
         $_SESSION["zip"] = $emailExisted["zip"];
         //not sure if this is needed?
         $_SESSION["field"] = $emailExisted["field"];
-        header("location: ../HTML files/medicalportal.php");
+        header("location: ../medicalportal.php");
         exit();
     }
 
 }
 
-function createMeeting($conn,$mname,$email,$oid,$city,$zip,$desc,$time_start,$time_end, $date){
-    $sql ="INSERT INTO `meeting`(`mname`, `demail`,`office_id`, `city`, `zip`, `desc`, `sTime`, `eTime`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+function createMeeting($conn,$mname,$oid,$city,$zip,$desc,$time_start,$time_end, $date){
+    $sql ="INSERT INTO `meeting`(`mname`,`office_id`, `city`, `zip`, `descrip`, `sTime`, `eTime`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../medicalscheduler.php?error=stmtfailed");
@@ -132,7 +132,7 @@ function createMeeting($conn,$mname,$email,$oid,$city,$zip,$desc,$time_start,$ti
 
 
 
-    mysqli_stmt_bind_param($stmt, "ssssssss", $mname, $email, $oid, $city, $zip, $desc, $time_start, $time_end, $date);
+    mysqli_stmt_bind_param($stmt, "ssssssss", $mname, $oid, $city, $zip, $desc, $time_start, $time_end, $date);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../medicalscheduler.php?error=none");

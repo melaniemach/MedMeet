@@ -35,7 +35,7 @@ else
     echo "Could not create doctor: ". mysqli_error($conn);
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS office(oid int AUTO_INCREMENT NOT NULL,oname varchar(50) NOT NULL,oemail varchar(50) NOT NULL, pass varchar(50) NOT NULL,field varchar(50) NOT NULL,city varchar(50) NOT NULL,zip int NOT NULL,PRIMARY KEY (oid));";
+$sql = "CREATE TABLE IF NOT EXISTS office(oid int AUTO_INCREMENT NOT NULL,oname varchar(50) NOT NULL,oemail varchar(50) NOT NULL, pass varchar(50) NOT NULL,field varchar(50) NOT NULL,city varchar(50) NOT NULL,zip int NOT NULL,PRIMARY KEY (`oid`));";
 if(mysqli_query($conn, $sql))
 {
 }
@@ -44,7 +44,7 @@ else
     echo "Could not create office: ". mysqli_error($conn);
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS meeting(mid int AUTO_INCREMENT NOT NULL,mname varchar(50) NOT NULL,office_id int NOT NULL,city varchar(50) NOT NULL,zip int NOT NULL, descrip varchar(300) NOT NULL,sTime time NOT NULL,eTime time NOT NULL, date date NOT NULL,PRIMARY KEY (mid), CONSTRAINT office_FK FOREIGN KEY (office_id) REFERENCES office(`oid`));";
+$sql = "CREATE TABLE IF NOT EXISTS meeting(mid int AUTO_INCREMENT NOT NULL,mname varchar(50) NOT NULL,office_id int NOT NULL,city varchar(50) NOT NULL,zip int NOT NULL, descrip varchar(300) NOT NULL,sTime time NOT NULL,eTime time NOT NULL, `date` date NOT NULL,PRIMARY KEY (mid), CONSTRAINT office_FK FOREIGN KEY (office_id) REFERENCES office(`oid`));";
 if(mysqli_query($conn, $sql))
 {
 }

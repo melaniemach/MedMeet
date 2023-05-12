@@ -5,7 +5,6 @@ session_start();
 if (isset($_POST["submit"])) {
     
     $mname = $_POST["mname"];
-    $email = $_POST["email"];
     $city = $_POST["city"];
     $zip = $_POST["zip"];
     $descip = $_POST["desc"];
@@ -17,5 +16,5 @@ if (isset($_POST["submit"])) {
     require_once 'dbh.inc.php';
     require_once 'med.func.inc.php';
 
-    createMeeting($conn, $mname, $email, $oid, $city, $zip, $descip, $time_start, $time_end ,$date);
+    createMeeting($conn, $mname, $oid, $city, $zip, $descip, $time_start, $time_end ,$date);
 }

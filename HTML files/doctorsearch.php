@@ -47,32 +47,60 @@
       $entry = $_POST["search"];
 
       require_once 'PHP files/dbh.inc.php';
-      $sql = "SELECT COUNT(*) as total FROM office WHERE city = $entry or zip = $entry;";
+      $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry OR city = $entry;";
       $result=mysqli_query($conn, $sql);
       $data=mysqli_fetch_assoc($result);
-      echo "Total Results:" . $data['total'] . "<br>"."--------------------------------<br>";
+      echo "Total Results:" . $data['total'] . "<br>";
       
-      $sql = "SELECT * FROM office WHERE city = $entry or zip = $entry;";
+      $sql = "SELECT * FROM office WHERE city LIKE $entry or zip = $entry;";
       $retval=mysqli_query($conn, $sql);
+
+      
 
       if(mysqli_num_rows($retval) > 0)
         {
             while($row = mysqli_fetch_assoc($retval)){
-            echo " Office Name :{$row['oname']} <br> "
-            ."Office Email :{$row['oemail']} <br> "
-            ."Office Field :{$row['field']} <br> "
-            ."Office City :{$row['city']} <br> "
-            ."Office Zip :{$row['zip']} <br> "
-            ."--------------------------------<br>";
+              $oid = $row['oid'];
+              echo "<table> <tr> <th>Office Name</th> <th>Office Email</th> <th>Office Field</th> <th>Office City</th> <th>Office Zip</th> </tr>" 
+              ."<tr> <td>{$row['oname']} </td>"
+              ."<td>{$row['oemail']} </td>"
+              ."<td>{$row['field']} </td>"
+              ."<td>{$row['city']} </td>"
+              ."<td>{$row['zip']} </td>"
+              ."</tr></table> <br>";
+              $sql1 = "SELECT * FROM meeting WHERE office_id = $oid;";
+              $retval1=mysqli_query($conn, $sql1);
+
+              if(mysqli_num_rows($retval1) > 0)
+              {
+                while($rows = mysqli_fetch_assoc($retval1)){ 
+                  echo "<table> <tr> <th>Event Name</th> <th>Event Discription</th> <th>Event Time</th> <th>Event Date</th> <th>Event City</th> <th>Event Zip</th> </tr>";
+                  echo "<tr> <td>{$rows['mname']} </td>"
+                  ."<td style='width:150px'>{$rows['descrip']} </td>"
+                  ."<td>{$rows['sTime']} - {$rows['eTime']} </td>"
+                  ."<td>{$rows['date']} </td>"
+                  ."<td>{$rows['city']} </td>"
+                  ."<td>{$rows['zip']} </td>"
+                  ."</tr> </table> <br>";
+                  echo "<form action='' method = 'POST'>"
+                  ."<label for='mess'>Message</label>"
+                  ."<textarea name='mess' class='textbox' placeholder='Message for Medical Office' id='mess' rows='3' cols='30' maxlength='300' wrap='soft'></textarea>"
+                  ."<button type='submit' name='join' class='button' value='join'>Join Event</button>"
+                  ."</form>";
+                } //end of while
+              }
+              else
+              {
+                echo "0 results";
+              }
             } //end of while
         }
         else
         {
-            echo " \n 0 results";
+            echo "0 results";
         }
       mysqli_close($conn);
     }
-    
     ?>
 
     <footer>

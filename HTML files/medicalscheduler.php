@@ -36,7 +36,7 @@
     <!--Heading for scheduling form-->
     <div class="form-header">
       <h3>Event Scheduler</h3>
-      <p>Schedule a meeting with a doctor</p>
+      <p>Schedule an Event</p>
     </div>
 
     <!--Heading for scheduling form-->
@@ -44,9 +44,6 @@
       <!--Meeting name-->
       <label for="meeting">Meeting</label>
       <input type="text" name="mname" placeholder="Enter Event Name" class="textbox" id="mname" required> <br>
-      <!-- Doctor email -->
-      <label for="demail">Doctor Email</label>
-      <input type="text" name="email" placeholder="Enter Doctor Email" class="textbox" id="email" required> <br>
       <!--City-->
       <label for="City">City</label>
       <input type="text" name="city" placeholder="Enter City of Event" class="textbox" id="city" required></br>
