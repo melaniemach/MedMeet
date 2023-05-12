@@ -11,8 +11,7 @@
     <title>Doctor Portal</title>
     <link rel="stylesheet" href="../CSS files/reset.css">
     <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
-    <link rel="stylesheet" type="text/css" href="../CSS files/schedule.css">
-
+    <link rel="stylesheet" type="text/css" href="../CSS files/docportal.css">
 </head>
 
 <body>
@@ -34,7 +33,7 @@
 
     <main>
       <section>
-      <h1>Pending Events Requests</h1>
+      <h1>Registered Event Requests</h1>
       <h2>Event Name: </h2>
       </section>
       <table id="eventsTable">
@@ -58,14 +57,14 @@
           echo '<td>' . $event[1] . '</td>';
           echo '<td>' . $event[2] . '</td>';
           echo '<td>' . $event[3] . '</td>';
-          echo '<td><button class="button-approve">Approve</button><button class="button-reject">Reject</button></td>';
+          echo '<td><button class="button-edit">Edit</button><button class="button-cancel">Cancel</button></td>';
           echo '</tr>';
         }
         ?>
       </table>
 
       <section>
-      <h1>Current Event Participants</h1>
+      <h1>Confirmed Events</h1>
       <h2>Event Name: </h2>
       </section>
       <table id="eventsTable">

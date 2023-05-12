@@ -72,6 +72,7 @@ th {
 }
 
 .button-approve:hover,
-.button-reject:hover {
+.button-reject:hover,
+.button-cancel:hover {
   opacity: 0.6;
 }
