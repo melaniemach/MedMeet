@@ -121,3 +121,20 @@ function loginDoctor($conn, $email, $pass){
     }
 
 }
+
+function createParticpant($conn, $mid, $did , $name, $loca, $mess, $stat){
+    $sql ="INSERT INTO `participants`(`meeting_id`,`doctor_id`, `names`, `dateTim`, `loca`, `message`, `stat`) VALUES (?, ?, ?, now(), ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../doctorsearch.php?error=stmtfailed");
+        exit();
+    }
+
+
+
+    mysqli_stmt_bind_param($stmt, "ssssss", $mid, $did, $name, $loca, $mess, $stat);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../doctorsearch.php?error=none");
+
+}

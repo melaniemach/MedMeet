@@ -53,7 +53,7 @@ else
     echo "Could not create doctor: ". mysqli_error($conn);
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS participants(pid int AUTO_INCREMENT NOT NULL,meeting_id int NOT NULL,doctor_id int NOT NULL, PRIMARY KEY (pid), CONSTRAINT meeting_FK FOREIGN KEY (meeting_id) REFERENCES meeting(mid), CONSTRAINT `doctor_FK` FOREIGN KEY (`doctor_id`) REFERENCES `doctors`(`did`) ON DELETE RESTRICT ON UPDATE RESTRICT);";
+$sql = "CREATE TABLE IF NOT EXISTS participants(pid int AUTO_INCREMENT NOT NULL, meeting_id int NOT NULL, doctor_id int NOT NULL, names varchar (50) NOT NULL, dateTim DATETIME NOT NULL, loca varchar(50) NOT NULL, message varchar(300) NOT NULL, stat varchar(10) NOT NULL, PRIMARY KEY (pid), CONSTRAINT meeting_FK FOREIGN KEY (meeting_id) REFERENCES meeting(mid), CONSTRAINT `doctor_FK` FOREIGN KEY (`doctor_id`) REFERENCES `doctors`(`did`) ON DELETE RESTRICT ON UPDATE RESTRICT);";
 if(mysqli_query($conn, $sql))
 {
 }

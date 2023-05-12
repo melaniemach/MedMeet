@@ -82,6 +82,7 @@
               {
                 while($rows = mysqli_fetch_assoc($retval1)){ 
                   echo "<table> <tr> <th>Event Name</th> <th>Event Discription</th> <th>Event Time</th> <th>Event Date</th> <th>Event City</th> <th>Event Zip</th> </tr>";
+                  $mid = $rows['mid'];
                   echo "<tr> <td>{$rows['mname']} </td>"
                   ."<td style='width:150px'>{$rows['descrip']} </td>"
                   ."<td>{$rows['sTime']} - {$rows['eTime']} </td>"
@@ -89,10 +90,11 @@
                   ."<td>{$rows['city']} </td>"
                   ."<td>{$rows['zip']} </td>"
                   ."</tr> </table> <br>";
-                  echo "<form action='' method = 'POST'>"
+                  echo "<form action='PHP files/event.join.php' method = 'POST'>"
                   ."<label for='mess'>Message</label>"
-                  ."<textarea name='mess' class='textbox' placeholder='Message for Medical Office' id='mess' rows='3' cols='30' maxlength='300' wrap='soft'></textarea>"
-                  ."<button type='submit' name='join' class='button' value='join'>Join Event</button>"
+                  ."<textarea name='message' class='textbox' placeholder='Message for Medical Office' id='mess' rows='3' cols='30' maxlength='300' wrap='soft' required></textarea>"
+                  ."<input type='hidden' name='mid' value='$mid'>"
+                  ."<button type='submit' name='submit' class='button' value='join'>Join Event</button>"
                   ."</form>";
                 } //end of while
               }
