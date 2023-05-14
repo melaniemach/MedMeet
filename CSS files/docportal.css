@@ -1,67 +1,67 @@
 section {
-    max-width: 100%; 
-    margin: 80px auto 0 auto; 
-  }
-  
-  h1 {
-    font-size: 32px;
-    position: relative;
-    z-index: 2;
-    margin-top: 50px 0 0;
-    padding: 20px auto;
-    text-align: left;
-    margin-left: calc((100% - 80%) / 2);
-    text-decoration: underline;
-  }
-  
-  h2 {
-    font-size: 28px;
-    position: relative;
-    z-index: 2;
-    margin-top: 50px 0 0;
-    padding: 20px auto;
-    text-align: left;
-    margin-left: calc((100% - 80%) / 2); 
-  }
-  
-  table {
-    margin: 20px auto 0;
-    width: 80%;
-    border-collapse: collapse;
-    padding: 8px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
-  .button-edit {
-    background-color: #6fd472;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 3px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .button-cancel {
-    background-color: #f8da41;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 3px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .button-edit:hover,
-  .button-cancel:hover {
-    opacity: 0.6;
-  }
+  max-width: 100%; 
+  margin: 80px auto 0 auto; 
+}
+
+h1 {
+  font-size: 32px;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px 0 0;
+  padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2);
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 28px;
+  position: relative;
+  z-index: 2;
+  margin-top: 50px 0 0;
+  padding: 20px auto;
+  text-align: left;
+  margin-left: calc((100% - 80%) / 2); 
+}
+
+table {
+  margin: 20px auto 0;
+  width: 80%;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.button-edit {
+  background-color: #6fd472;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button-cancel {
+  background-color: #f8da41;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-edit:hover,
+.button-cancel:hover {
+  opacity: 0.6;
+}

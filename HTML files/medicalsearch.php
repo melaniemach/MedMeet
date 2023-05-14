@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS files/search.css">
 
   </head>
-  <!-- NEED LOGIN PAGE BEFORE DOING THIS -->
+
   <body>
     <header class="header-main">
       <div class="header-main-logo">

@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="../CSS files/reset.css">
     <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
     <link rel="stylesheet" type="text/css" href="../CSS files/search.css">
-
   </head>
-  <!-- NEED LOGIN PAGE BEFORE DOING THIS -->
   <body>
     <header class="header-main">
       <div class="header-main-logo">
@@ -32,7 +30,7 @@
 
     <main>
         <div class="search-container">
-            <form action="doctorsearch.php" method="POST">
+            <form action="doctorsearch.php" method="POST" class="search-form">
                 <label for="search">Search for medical offices:</label>
                 <input type="text" id="search" name="search" placeholder="Search city or ZIP code">
                 <button name="submit" type="submit">Search</button>
@@ -57,7 +55,8 @@
       
       $result=mysqli_query($conn, $sql);
       $data=mysqli_fetch_assoc($result);
-      echo "Total Results:" . $data['total'] . "<br>";
+      echo "<h3> Search Results For " . htmlspecialchars($entry) . "</h3><br>";
+      echo "<h3> Total Results: " . $data['total'] . "</h3><br>";
       
        
       $retval=mysqli_query($conn, $sql1);
@@ -81,21 +80,20 @@
               if(mysqli_num_rows($retval1) > 0)
               {
                 while($rows = mysqli_fetch_assoc($retval1)){ 
-                  echo "<table> <tr> <th>Event Name</th> <th>Event Discription</th> <th>Event Time</th> <th>Event Date</th> <th>Event City</th> <th>Event Zip</th> </tr>";
+                  echo "<table> <tr> <th>Event Name</th> <th>Event Discription</th> <th>Event Date & Time</th> <th>Event City & Zip</th> <th>Message: </th><th>Action</th></tr>";
                   $mid = $rows['mid'];
                   echo "<tr> <td>{$rows['mname']} </td>"
                   ."<td style='width:150px'>{$rows['descrip']} </td>"
-                  ."<td>{$rows['sTime']} - {$rows['eTime']} </td>"
-                  ."<td>{$rows['date']} </td>"
-                  ."<td>{$rows['city']} </td>"
-                  ."<td>{$rows['zip']} </td>"
+                  ."<td>{$rows['date']}, {$rows['sTime']} - {$rows['eTime']} </td>"
+                  ."<td>{$rows['city']}, {$rows['zip']}</td>"
+                  ."<td> <form action='PHP files/event.join.php' method = 'POST' class='message-form'>
+                          <textarea name='message' class='textbox' placeholder='Message for Medical Office' id='mess' rows='2' cols='20' maxwidth='200' required></textarea>
+                          <input type='hidden' name='mid' value='$mid'>
+                    </td>"
+                  ."<td> <button type='join' name='join' class='event-button' value='join'>Join Event</button>
+                  </form>
+                  </td>"
                   ."</tr> </table> <br>";
-                  echo "<form action='PHP files/event.join.php' method = 'POST'>"
-                  ."<label for='mess'>Message</label>"
-                  ."<textarea name='message' class='textbox' placeholder='Message for Medical Office' id='mess' rows='3' cols='30' maxlength='300' wrap='soft' required></textarea>"
-                  ."<input type='hidden' name='mid' value='$mid'>"
-                  ."<button type='submit' name='submit' class='button' value='join'>Join Event</button>"
-                  ."</form>";
                 } //end of while
               }
               else
@@ -106,7 +104,7 @@
         }
         else
         {
-            echo "0 results";
+            echo "<h3> 0 results </h3>";
         }
       mysqli_close($conn);
     }
