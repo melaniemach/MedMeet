@@ -10,16 +10,10 @@ if (isset($_POST["join"])) {
     $loca = $_SESSION["city"] . '/' . $_SESSION["zip"]; // Get the location (city/zip) from the session
     $stat = "PENDING"; // Set the status as "PENDING"
 
-if (isset($_POST["submit"])) {
-    $message = $_POST["message"];
-    $did = $_SESSION["did"];
-    $mid = $_POST["mid"];
-    $name = $_SESSION["fname"] . ' ' . $_SESSION["lname"];
-    $loca = $_SESSION["city"] . '/' . $_SESSION["zip"];
-    $stat = "PENDING";
-
-    createParticpant($conn, $mid, $did, $name, $loca, $message, $stat); // Call the function to create a participant
+    // Call the function to create a participant
+    createParticpant($conn, $mid, $did, $name, $loca, $message, $stat); 
 }
 else {
-    header("location: ../doctorsearch.php"); // Redirect to the doctor search page if the form is not submitted
+    // Redirect to the doctor search page if the form is not submitted
+    header("location: ../doctorsearch.php");
 }   
