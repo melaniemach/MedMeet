@@ -35,30 +35,54 @@
       <h1>Registered Event Requests</h1>
       <h2>Event Name: </h2>
       </section>
-      <table id="eventsTable">
-        <tr>
-          <th>From</th>
-          <th>Date & Time</th>
-          <th>City & Zip</th>
-          <th>Message</th>
-          <th>Action</th>
-        </tr>
         <?php
-        // Example data for demonstration
-        $events = [
-          ['John Doe', '2023-05-12 10:00 AM', 'New York, 12345', 'Lorem ipsum dolor sit amet'],
-          ['Jane Smith', '2023-05-13 2:30 PM', 'Los Angeles, 67890', 'Consectetur adipiscing elit'],
-        ];
 
-        foreach ($events as $event) {
-          echo '<tr>';
-          echo '<td>' . $event[0] . '</td>';
-          echo '<td>' . $event[1] . '</td>';
-          echo '<td>' . $event[2] . '</td>';
-          echo '<td>' . $event[3] . '</td>';
-          echo '<td><button class="button-edit">Edit</button><button class="button-cancel">Cancel</button></td>';
-          echo '</tr>';
+        require_once 'PHP files/dbh.inc.php';
+
+        $did = $_SESSION["did"];
+
+        $sql = "SELECT * FROM participants WHERE doctor_id = $did;";
+
+        $retval=mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($retval) > 0){
+          while($row = mysqli_fetch_assoc($retval)){
+            if($row["stat"] == "PENDING"){
+              $mid = $row["meeting_id"];
+              $sql1 = "SELECT * FROM meeting WHERE mid = $mid;";
+              $retval1=mysqli_query($conn, $sql1);
+              if(mysqli_num_rows($retval1) > 0){
+                while($row1 = mysqli_fetch_assoc($retval1)){
+                  echo $row1["mname"] .": ";
+                  echo "<table id='eventsTable'>"
+                  . "<tr>"
+                  .  "<th>From</th>"
+                  .  "<th>Date & Time</th>"
+                  .  "<th>City & Zip</th>"
+                  .  "<th>Your Message</th>"
+                  .  "<th>Action</th>"
+                  .  "</tr>";
+                }
+              }
+              else{
+                echo "<h3> 0 results </h3>";
+              }
+              $pid = $row["pid"];
+              echo '<tr>';
+              echo '<td>' . $row["names"] . '</td>';
+              echo '<td>' . $row["dateTim"] . '</td>';
+              echo '<td>' . $row["loca"] . '</td>';
+              echo '<td>' . $row["message"] . '</td>';
+              echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+              echo '</tr>';
+            }
+            
+          }
         }
+        else{
+          echo "<h3> 0 results </h3>";
+        }
+
         ?>
       </table>
 
@@ -75,21 +99,51 @@
           <th>Action</th>
         </tr>
         <?php
-        // Example data for demonstration
-        $events = [
-          ['John Doe', '2023-05-12 10:00 AM', 'New York, 12345', 'Lorem ipsum dolor sit amet'],
-          ['Jane Smith', '2023-05-13 2:30 PM', 'Los Angeles, 67890', 'Consectetur adipiscing elit'],
-        ];
 
-        foreach ($events as $event) {
-          echo '<tr>';
-          echo '<td>' . $event[0] . '</td>';
-          echo '<td>' . $event[1] . '</td>';
-          echo '<td>' . $event[2] . '</td>';
-          echo '<td>' . $event[3] . '</td>';
-          echo '<td><button class="button-cancel">Cancel</button></td>';
-          echo '</tr>';
+        $did = $_SESSION["did"];
+
+        $sql = "SELECT * FROM participants WHERE doctor_id = $did;";
+
+        $retval=mysqli_query($conn, $sql);
+
+        if(mysqli_num_rows($retval) > 0){
+          while($row = mysqli_fetch_assoc($retval)){
+            if($row["stat"] == "APPORVED"){
+              $mid = $row["meeting_id"];
+              $sql1 = "SELECT * FROM meeting WHERE mid = $mid;";
+              $retval1=mysqli_query($conn, $sql1);
+              if(mysqli_num_rows($retval1) > 0){
+                while($row1 = mysqli_fetch_assoc($retval1)){
+                  echo $row1["mname"] .": ";
+                  echo "<table id='eventsTable'>"
+                  . "<tr>"
+                  .  "<th>From</th>"
+                  .  "<th>Date & Time</th>"
+                  .  "<th>City & Zip</th>"
+                  .  "<th>Your Message</th>"
+                  .  "<th>Action</th>"
+                  .  "</tr>";
+                }
+              }
+              else{
+                echo "<h3> 0 results </h3>";
+              }
+              $pid = $row["pid"];
+              echo '<tr>';
+              echo '<td>' . $row["names"] . '</td>';
+              echo '<td>' . $row["dateTim"] . '</td>';
+              echo '<td>' . $row["loca"] . '</td>';
+              echo '<td>' . $row["message"] . '</td>';
+              echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+              echo '</tr>';
+            }
+            
+          }
         }
+        else{
+          echo "<h3> 0 results </h3>";
+        }
+
         ?>
       </table>
     </main>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_POST["submit"])) {
+if (isset($_POST["join"])) {
     $message = $_POST["message"];
     $did = $_SESSION["did"];
     $mid = $_POST["mid"];
