@@ -32,7 +32,7 @@
         <div class="search-container">
             <form action="doctorsearch.php" method="POST" class="search-form">
                 <label for="search">Search for medical offices:</label>
-                <input type="text" id="search" name="search" placeholder="Search city or ZIP code">
+                <input type="text" id="search" name="search" placeholder="Search city, ZIP code, or field">
                 <button name="submit" type="submit">Search</button>
             </form>              
         </div>        
@@ -42,24 +42,16 @@
     // Check if the form is submitted
     if(isset($_POST["submit"])){
       // Get the search entry from the form
-      $entry = $_POST["search"]; 
+      $entry = $_POST["search"];  
 
       // Include the database connection file
       require_once 'PHP files/dbh.inc.php';
 
-      // Check if the search entry is numeric (assumed to be zip code)
-      if(is_numeric($entry)){
-        // SQL query to count total offices with the given zip code
-        $sql = "SELECT COUNT(*) as total FROM office WHERE zip = $entry";
-        // SQL query to retrieve office details with the given zip code
-        $sql1 = "SELECT * FROM office WHERE zip = $entry;";
-      }
-      else{
-        // SQL query to count total offices with the given city name
-        $sql = "SELECT COUNT(*) as total FROM office WHERE city LIKE '$entry';";
-        // SQL query to retrieve office details with the given city name
-        $sql1 = "SELECT * FROM office WHERE city LIKE '$entry';";
-      }
+      // SQL query to count total offices with the given city, ZIP code, or field
+      $sql = "SELECT COUNT(*) as total FROM office WHERE city LIKE '%$entry%' OR zip = '$entry' OR field = '$entry'";
+      // SQL query to retrieve office details with the given city, ZIP code, or field
+      $sql1 = "SELECT * FROM office WHERE city LIKE '%$entry%' OR zip = '$entry' OR field = '$entry'";
+
       // Execute the query
       $result=mysqli_query($conn, $sql);
       // Get the count of total offices
