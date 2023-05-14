@@ -25,7 +25,6 @@
           <ul>
             <li><a href="medicalportal.php">PORTAL</a></li>
             <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
-            <li><a href="medicalsearch.php">SEARCH</a></li>
             <li><a href="medicalprofile.php">PROFILE</a></li>
             <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>
           </ul>

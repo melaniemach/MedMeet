@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../CSS files/reset.css">
   <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
   <link rel="stylesheet" type="text/css" href="../CSS files/form.css">
-  
 </head>
 
 <body>
@@ -62,11 +61,20 @@
       <p class="register"> Not a member? <br>
         <a class= "medoffice" href="medicalsu.html">Medical offices, register here!</a>
       </p>
-
     </div>
-  
   </form>
+  
+  <script>
+    // Retrieve the error message from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
 
+    // Display the error message if it exists
+    if (error === 'wrongemail') {
+        alert('Incorrect email. Please try again.');
+    } else if (error === 'wrongpassword') {
+        alert('Incorrect password. Please try again.');
+    }
+  </script>
 </body>
-
 </html>
