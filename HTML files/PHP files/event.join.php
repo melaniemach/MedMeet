@@ -10,6 +10,8 @@ if (isset($_POST["join"])) {
     $loca = $_SESSION["city"] . '/' . $_SESSION["zip"]; // Get the location (city/zip) from the session
     $stat = "PENDING"; // Set the status as "PENDING"
 
+    require_once 'dbh.inc.php';
+    require_once 'func.inc.php';
     // Call the function to create a participant
     createParticpant($conn, $mid, $did, $name, $loca, $message, $stat); 
 }
