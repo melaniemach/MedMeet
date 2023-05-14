@@ -1,8 +1,8 @@
 <?php
 
-require_once 'dbh.inc.php';
+require_once 'dbh.inc.php'; // Include the database connection file
 
-
+// Function to check if the first name is invalid (contains only letters)
 function invalidfname($fname){
     if(!preg_match("/^[a-zA-Z]*$/", $fname)){
         $result = true;
@@ -13,6 +13,7 @@ function invalidfname($fname){
     return $result;
 }
 
+// Function to check if the other name is invalid (contains only letters)
 function invalidoname($oname){
     if(!preg_match("/^[a-zA-Z]*$/", $oname)){
         $result = true;
@@ -22,6 +23,8 @@ function invalidoname($oname){
     }
     return $result;
 }
+
+// Function to check if a field is invalid (contains only letters)
 function invalidfield($field){
     if(!preg_match("/^[a-zA-Z]*$/", $field)){
         $result = true;
@@ -32,6 +35,7 @@ function invalidfield($field){
     return $result;
 }
 
+// Function to check if the last name is invalid (contains only letters)
 function invalidlname($lname){
     if(!preg_match("/^[a-zA-Z]*$/", $lname)){
         $result = true;
@@ -42,6 +46,7 @@ function invalidlname($lname){
     return $result;
 }
 
+// Function to check if the email is invalid
 function invalidemail($email){
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $result = true;
@@ -52,6 +57,7 @@ function invalidemail($email){
     return $result;
 }
 
+// Function to check if an email already exists in the database
 function emailExists($conn, $email){
     $sql ="SELECT * FROM office WHERE oemail = ?;";
     $stmt = mysqli_stmt_init($conn);
@@ -78,6 +84,7 @@ function emailExists($conn, $email){
 
 }
 
+// Function to create a new office in the database
 function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
     $sql ="INSERT INTO `office`(`oname`, `oemail`, `pass`, `field`, `city`, `zip`) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
@@ -95,6 +102,8 @@ function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
 
 }
 
+
+// Function to login an office
 function loginOffice($conn, $email, $pass){
     $emailExisted = emailExists($conn, $email);
     
@@ -122,6 +131,7 @@ function loginOffice($conn, $email, $pass){
 
 }
 
+// Function to create a meeting in the database
 function createMeeting($conn,$mname,$oid,$city,$zip,$desc,$time_start,$time_end, $date){
     $sql ="INSERT INTO `meeting`(`mname`,`office_id`, `city`, `zip`, `descrip`, `sTime`, `eTime`, `date`) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);

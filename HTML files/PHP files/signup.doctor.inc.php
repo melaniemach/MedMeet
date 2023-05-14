@@ -1,40 +1,47 @@
 <?php
-
-if (isset($_POST["submit"])) {
+// Check if the form is submitted
+if (isset($_POST["submit"])) { 
     
-    $fname = $_POST["firstname"];
-    $lname = $_POST["lastname"];
-    $email = $_POST["email"];
-    $pass = $_POST["password"];
-    $city = $_POST["city"];
-    $zip = $_POST["postalcode"];
+    $fname = $_POST["firstname"]; // Get the first name from the form
+    $lname = $_POST["lastname"]; // Get the last name from the form
+    $email = $_POST["email"]; // Get the email from the form
+    $pass = $_POST["password"]; // Get the password from the form
+    $city = $_POST["city"]; // Get the city from the form
+    $zip = $_POST["postalcode"]; // Get the postal code from the form
 
-    require_once 'dbh.inc.php';
-    require_once 'func.inc.php';
+    require_once 'dbh.inc.php'; // Include the database connection file
+    require_once 'func.inc.php'; // Include the function file
 
-    if(invalidfname($fname) !== false){
-        header("location: ../doctorsu.html?error=invalidfname");
+    // Check if the first name is invalid
+    if (invalidfname($fname) !== false) { 
+        // Redirect with an error message for invalid first name
+        header("location: ../doctorsu.html?error=invalidfname"); 
         exit();
     }
-    if(invalidlname($lname) !== false){
-        header("location: ../doctorsu.html?error=invalidlname");
+    // Check if the last name is invalid
+    if (invalidlname($lname) !== false) { 
+        // Redirect with an error message for invalid last name
+        header("location: ../doctorsu.html?error=invalidlname"); 
         exit();
     }
-    if(invalidemail($email) !== false){
-        header("location: ../doctorsu.html?error=invalidemail");
+    // Check if the email is invalid
+    if (invalidemail($email) !== false) { 
+        // Redirect with an error message for invalid email
+        header("location: ../doctorsu.html?error=invalidemail"); 
         exit();
     }
 
     /* DOES NOT WORK */
-    if(emailExists($conn, $email) !== false){
-        header("location: ../doctorsu.html?error=emailtaken");
+    // Check if the email already exists in the database
+    if (emailExists($conn, $email) !== false) { 
+        // Redirect with an error message for email already taken
+        header("location: ../doctorsu.html?error=emailtaken"); 
         exit();
     }
-
-    createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip);
+    // Call the function to create a doctor
+    createDoctor($conn, $fname, $lname, $email, $pass, $city, $zip); 
 }
 else {
-    header("location: ../doctorsu.html");
-}   
-
-?>
+    // Redirect to the doctor signup page if the form is not submitted
+    header("location: ../doctorsu.html"); 
+}

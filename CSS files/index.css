@@ -1,11 +1,9 @@
-/* STYLE FOR MAIN SECTION OF INDEX PAGE */
-
+/* Style for index page (index.html)  */
 section {
     max-width: 100%; 
     margin: 80px auto 0 auto; 
     text-align: center; 
 }
-  
 /* Style for the main heading */
 h1 {
     font-size: 48px; 
@@ -13,34 +11,29 @@ h1 {
     padding: 20px;
     background-image:url(../images/0fd3416c.jpeg);
 }
-
 /* Style for the sub 1 heading */
 h2 {
     font-size: 25px; 
     margin-bottom: 5px; 
     padding: 3px;
 }
-
 /* Style for the sub 2 heading */
 h3 {
     font-size: 20px; 
     /* margin-bottom: 5px;  */
     padding: 2px;
 }
-
 /* Style for the sub 3 heading */
 h4 {
     font-size: 15px; 
     /* margin-bottom: 5px;  */
     padding: 2px;
 }
-
 /* Style for the paragraphs */
 p {
     font-size: 20px;
     margin-bottom: 24px; 
 }
-  
 /* Style for the button */
 button {
     padding: 16px 32px;
@@ -49,11 +42,11 @@ button {
     border: none;
     max-width: 80%; 
 }
-
+/* Sytle for button hover */
 .get-started-options h3:hover {
     opacity: 0.6;
 }
-
+/* Sytle for Get Started section */
 .get-started-options {
   display: flex;
   justify-content: center;
@@ -61,7 +54,7 @@ button {
   margin-top: 20px;
   align-self: center;
 }
-
+/* Sytle for attribute <a> */
 .get-started-options a {
   text-decoration: none;
   color: #000;

@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS files/profile.css">
 </head>
 <body>
+    <!--Navigation bar-->  
     <header class="header-main">
         <div class="header-main-logo">
           <img src="../images/drugs.png" alt="logo" size>

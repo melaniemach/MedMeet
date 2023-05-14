@@ -1,10 +1,10 @@
+/* Styling for user profiles */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* Style for the user profile section */
+/* Style for the common user info section */
 .common-field {
   padding: 20px;
   margin-top: 60px;
@@ -15,25 +15,24 @@
   flex-direction: column;
   align-items: center;
 }
-  
+/* Sytle for common field h1 */
 .common-field h1 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-
+/* Sytle for common field h2 */
 .common-field h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-  
+/* Sytle for common field p */  
 .common-field p {
   font-size: 16px;
   margin: 0;
   margin-bottom: 10px;
 }
-
 /* Style for the doctor profile section */
 .doctor-info {
   padding: 20px;
@@ -45,7 +44,7 @@
   flex-direction: column;
   align-items: center;
 }
-  
+/* Sytle for doctor profile h2 */ 
 .doctor-info h2 {
   font-size: 20px;
   font-weight: bold;
@@ -63,7 +62,7 @@
   flex-direction: column;
   align-items: center;
 }
-  
+/* Sytle for medical office h2 */ 
 .medical-office-info h2 {
   font-size: 20px;
   font-weight: bold;

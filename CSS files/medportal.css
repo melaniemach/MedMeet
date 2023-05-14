@@ -1,8 +1,9 @@
+/* Style for medical portal (medicalportal.php) */
 section {
   max-width: 100%; 
   margin: 80px auto 0 auto; 
 }
-
+/* Style for h1 */
 h1 {
   font-size: 32px;
   position: relative;
@@ -13,7 +14,7 @@ h1 {
   margin-left: calc((100% - 80%) / 2);
   text-decoration: underline;
 }
-
+/* Style for h2 */
 h2 {
   font-size: 28px;
   position: relative;
@@ -23,23 +24,23 @@ h2 {
   text-align: left;
   margin-left: calc((100% - 80%) / 2); 
 }
-
+/* Style for tables */
 table {
   margin: 20px auto 0;
   width: 80%;
   border-collapse: collapse;
   padding: 8px;
 }
-
+/* Style for table headher and data cells */
 th, td {
   border: 1px solid #ddd;
   padding: 8px;
 }
-
+/* Style for table header color */
 th {
   background-color: #f2f2f2;
 }
-
+/* Style for approve button */
 .button-approve {
   background-color: #6fd472;
   color: #fff;
@@ -50,7 +51,7 @@ th {
   cursor: pointer;
   margin-right: 10px;
 }
-
+/* Style for reject button */
 .button-reject {
   background-color: #fc5f5f;
   color: #fff;
@@ -60,7 +61,7 @@ th {
   font-size: 16px;
   cursor: pointer;
 }
-
+/* Style for cancel button */
 .button-cancel {
   background-color: #f8da41;
   color: #fff;
@@ -70,7 +71,7 @@ th {
   font-size: 16px;
   cursor: pointer;
 }
-
+/* Style for button hover */
 .button-approve:hover,
 .button-reject:hover,
 .button-cancel:hover {

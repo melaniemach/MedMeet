@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- CSS styles -->
   <link rel="stylesheet" href="../CSS files/reset.css">
   <link rel="stylesheet" type="text/css" href="../CSS files/style.css">
   <link rel="stylesheet" type="text/css" href="../CSS files/form.css">
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+  <!-- Nav bar -->
   <header class="header-main">
     <div class="header-main-logo">
       <img src="../images/drugs.png" alt="logo" size>

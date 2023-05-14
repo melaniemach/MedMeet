@@ -1,62 +1,14 @@
-
+/* Styling for search pages */
+/* Style for search bar container*/
 .search-container {
   position: relative;
   margin: 0 auto;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-input[type="text"] {
-  width: 250px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 16px;
-}
-
-button[type="submit"] {
-  background-color: #5fcfd9;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 3px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-button[type="submit"]:hover {
-  background-color: #479da5;
-}
-
-table {
-  margin: 20px auto 0;
-  width: 80%;
-  border-collapse: collapse;
-  padding: 8px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  vertical-align: top;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
+/* Style for search form */
 .search-form {
   width: 80%;
   max-width: 400px;
@@ -70,28 +22,76 @@ th {
   margin-top: 75px;
   margin-bottom: 50px;
 }
-
+/* Style for search bar */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* Style for search bar input */
+input[type="text"] {
+  width: 250px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* Style for submit button */
+button[type="submit"] {
+  background-color: #5fcfd9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+/* Style for submit button hover */
+button[type="submit"]:hover {
+  background-color: #479da5;
+}
+/* Style for results table */
+table {
+  margin: 20px auto 0;
+  width: 80%;
+  border-collapse: collapse;
+  padding: 8px;
+}
+/* Style for table header and data cells */
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+/* Style for table header color */
+th {
+  background-color: #f2f2f2;
+}
+/* Style for message form text */
 .message-form {
   overflow-wrap: break-word;
 }
-
+/* Style for h3 */
 h3 {
   font-size: 15px;
   position: relative;
   text-align: left;
   margin-left: calc((100% - 80%) / 2); 
 }
-
+/* Style for join event button */
 button[type="join"] {
   background-color: #4CAF50;
   color: #fff;
   border: none;
   padding: 6px 12px;
-  border-radius: 3px;
+  border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
 }
-
+/* Style for join event button hover */
 button[type="join"]:hover {
   background-color: #3e8e41;
 }

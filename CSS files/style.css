@@ -1,27 +1,27 @@
-/*STYLING FOR NAVBAR/FOOTER*/
+/*Style for navigation bar and footer */
 
 /* FONT LINK */
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
+/* Style for overall page */
 html, body {
   height: 100%;
 }
-
+/* Style for main */
 main {
   flex: 1;
 }
-
+/* Style for body */
 body {
   background-color: #ffffff;
   font-family: 'Nunito', sans-serif;
   display: flex;
   flex-direction: column;
 }
-
+/* Style for attributes */
 a {
   cursor: pointer;
 }
-
+/* Style for navigation bar */
 .header-main {
   width: 100%;
   height: 60px;
@@ -33,7 +33,7 @@ a {
   z-index: 999;
   position: fixed;
 }
-
+/* Style for nav bar logo */
 .header-main-logo {
   width: fit-content;
   height: 100%;
@@ -49,13 +49,13 @@ a {
   display: flex;
   align-items: center;
 }
-
+/* Style for MedMeet in nav bar */
 .company-name {
   margin-left: 10px;
   font-size: 24px;
   font-weight: bold;
 }
-
+/* Style for nav bar contents */
 .header-main-nav {
   width: fit-content;
   height: 100%;
@@ -79,7 +79,7 @@ a {
 .header-main-nav ul li a:hover {
   opacity: 0.6; 
 }
-
+/* Style for dropdowns in nav bar */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -118,7 +118,7 @@ a {
   content: "\25BE";
   margin-left: 5px;
 }
-
+/* Style for footer */
 footer {
   background-color: #f2f2f2;
   height: 50px;
