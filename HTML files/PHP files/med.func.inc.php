@@ -123,6 +123,7 @@ function loginOffice($conn, $email, $pass){
         $_SESSION["oname"] = $emailExisted["oname"];
         $_SESSION["city"] = $emailExisted["city"];
         $_SESSION["zip"] = $emailExisted["zip"];
+        $_SESSION["pass"] = $emailExisted["pass"];
         //not sure if this is needed?
         $_SESSION["field"] = $emailExisted["field"];
         header("location: ../medicalportal.php");
