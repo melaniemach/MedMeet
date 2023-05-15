@@ -35,10 +35,8 @@
     <main>
       <section>
       <h1>Registered Event Requests</h1>
-      <h2>Event Name: </h2>
       </section>
         <?php
-
         require_once 'PHP files/dbh.inc.php';
 
         $did = $_SESSION["did"];
@@ -55,7 +53,7 @@
               $retval1=mysqli_query($conn, $sql1);
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
-                  echo $row1["mname"] .": ";
+                  echo "<h2>Event Name: " . $row1["mname"] . "</h2>";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"
@@ -75,7 +73,13 @@
               echo '<td>' . $row["dateTim"] . '</td>';
               echo '<td>' . $row["loca"] . '</td>';
               echo '<td>' . $row["message"] . '</td>';
-              echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+              echo "<td>
+                    <form action='PHP files/event.doctor.handler.php' method='POST'>
+                      <input type='hidden' name='pid' value='$pid'>
+                        <button name='approve' value='approve' class='button-approve'>Approve</button>
+                        <button name='cancel' value='cancel' class='button-cancel'>Cancel</button>
+                    </form>
+                  </td>";
               echo '</tr>';
             }
             
@@ -90,17 +94,8 @@
 
       <section>
       <h1>Confirmed Events</h1>
-      <h2>Event Name: </h2>
       </section>
-      <table id="eventsTable">
-        <tr>
-          <th>From</th>
-          <th>Date & Time</th>
-          <th>City & Zip</th>
-          <th>Message</th>
-          <th>Action</th>
-        </tr>
-        <?php
+      <?php
 
         $did = $_SESSION["did"];
 
@@ -116,7 +111,7 @@
               $retval1=mysqli_query($conn, $sql1);
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
-                  echo $row1["mname"] .": ";
+                  echo "<h2>Event Name: " . $row1["mname"] ." </h2> ";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"

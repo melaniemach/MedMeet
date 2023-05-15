@@ -40,6 +40,17 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+/* Style for approve button */
+.button-approve {
+  background-color: #6fd472;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
 /* Sytle for cancel button */
 .button-cancel {
   background-color: #f8da41;
@@ -51,6 +62,7 @@ th {
   cursor: pointer;
 }
 /* Sytle for cancel button hover  */
-.button-cancel:hover {
+.button-cancel:hover,
+.button-approve:hover {
   opacity: 0.6;
 }

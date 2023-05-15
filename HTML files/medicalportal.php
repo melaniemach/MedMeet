@@ -33,6 +33,7 @@
     </header>
 
     <main>
+      
       <section>
       <h1>Pending Events Requests</h1>
       <h2>Event Name: </h2>
@@ -98,15 +99,14 @@
 
         ?>
       </table>
-
-      <section>
-      <h1>Current Event Participants</h1>
-      <h2>Event Name: </h2>
-      </section>
         <?php
 
         require_once 'PHP files/dbh.inc.php';
-
+        
+        echo '<section>
+      <h1>Current Event Participants</h1>
+      <h2>Event Name:' . $row2["mname"] . ': </h2>
+      </section>';
         $oid = $_SESSION["oid"];
 
         $sql = "SELECT * FROM meeting WHERE office_id = $oid;";
@@ -126,7 +126,6 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
-                      echo $row2["mname"] .": ";
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
