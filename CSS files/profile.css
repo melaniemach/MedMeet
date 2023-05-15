@@ -1,4 +1,16 @@
 /* Styling for user profiles */
+/* body {
+  margin: 0;
+  padding: 0;
+} */
+section {
+  padding: 20px;
+  background-image: url(../images/0fd3416c.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  width: 100%;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -23,13 +35,13 @@
 }
 /* Sytle for common field h2 */
 .common-field h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 /* Sytle for common field p */  
 .common-field p {
-  font-size: 16px;
+  font-size: 20px;
   margin: 0;
   margin-bottom: 10px;
 }
@@ -46,7 +58,7 @@
 }
 /* Sytle for doctor profile h2 */ 
 .doctor-info h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -64,8 +76,38 @@
 }
 /* Sytle for medical office h2 */ 
 .medical-office-info h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-  
+
+button {
+  background-color: #5fcfd9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 150px;
+  margin: 5px;
+}
+
+/* Existing styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+form input[type="text"] {
+  width: 190px;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+}

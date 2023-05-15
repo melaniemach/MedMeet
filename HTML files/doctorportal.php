@@ -23,7 +23,7 @@
             <div class="company-name">MedMeet</div>
             <nav class="header-main-nav">
                 <ul>
-                    <li><a href="doctorportal.php">PORTAL</a></li>
+                    <li><a href="doctorportal.php">DOCTOR PORTAL</a></li>
                     <li><a href="doctorsearch.php">SEARCH</a></li>
                     <li><a href="doctorprofile.php">PROFILE</a></li>
                     <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>

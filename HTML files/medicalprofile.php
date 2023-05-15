@@ -21,7 +21,7 @@
           <div class="company-name">MedMeet</div>
           <nav class="header-main-nav">
             <ul>
-              <li><a href="medicalportal.php">PORTAL</a></li>
+              <li><a href="medicalportal.php">OFFICE PORTAL</a></li>
               <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
               <li><a href="medeventviewer.php">EVENT VIEWER</a></li>
               <li><a href="medicalprofile.php">PROFILE</a></li>
@@ -33,7 +33,9 @@
     <main>
       <div class="container">
         <div class="common-field">
+          <section>
           <h1>User Profile</h1>
+          </section>
           <h2>Basic Information</h2>
           <p>Office Name: <?php echo $_SESSION['oname'];
           if(isset($_POST["nameedit"])){

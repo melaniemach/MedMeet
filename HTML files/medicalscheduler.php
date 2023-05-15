@@ -24,7 +24,7 @@
       <div class="company-name">MedMeet</div>
       <nav class="header-main-nav">
         <ul>
-          <li><a href="medicalportal.php">PORTAL</a></li>
+          <li><a href="medicalportal.php">OFFICE PORTAL</a></li>
           <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
           <li><a href="medeventviewer.php">EVENT VIEWER</a></li>
           <li><a href="medicalprofile.php">PROFILE</a></li>
@@ -78,7 +78,7 @@
     // Display the error message if it exists
     if (error === 'none') {
         alert('Event created.');
-    } else {
+    }  else if (error === 'stmtfailed') {
         alert('Wrong information. Please try again.');
     }
   </script>
