@@ -61,10 +61,10 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
-                      echo "<h2>Event Name: " . $row2["mname"] ." </h2>";
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
+                      .  "<th>Meeting Name</th>"
                       .  "<th>Date & Time</th>"
                       .  "<th>City & Zip</th>"
                       .  "<th>Your Message</th>"
@@ -101,15 +101,25 @@
         ?>
       </table>
 
-      
-        <?php
+      <section>
+        <h1>Accept Event Participant</h1>
+        <h2>Enter the name of the participant that you would like to approve</h2>
+        <form action="PHP files/event.medical.handler.php" method="POST" class="participant-form">
+          <input type="text" placeholder="Full Name" name="names">
+          <button name="accept" class="button-approve" type="accept">ACCEPT</button>
+          <button name="cancel" class="button-cancel" type="cancel">CANCEL</button>
+        </form>
+      </section>
+
+      <?php
 
         require_once 'PHP files/dbh.inc.php';
         
         echo '<section>
-      <h1>Current Event Participants</h1>
-    
-      </section>';
+                <h1>Current Event Participants</h1>
+              
+              </section>';
+
         $oid = $_SESSION["oid"];
 
         $sql = "SELECT * FROM meeting WHERE office_id = $oid;";
@@ -129,10 +139,10 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
-                      echo " <h2>Event Name: " . $row2["mname"] . " </h2>";
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
+                      .  "<th>Meeting Name</th>"
                       .  "<th>Date & Time</th>"
                       .  "<th>City & Zip</th>"
                       .  "<th>Your Message</th>"
@@ -166,11 +176,6 @@
 
         ?>
       </table>
-      <form action="PHP files/event.medical.handler.php" method="POST">
-        <input type="text" placeholder="Full Name" name="names">
-        <button name="accept" class="button-approve" type="accept">ACCEPT</button>
-        <button name="cancel" class="button-cancel" type="cancel">CANCEL</button>
-      </form>
     </main>
 
     <footer>
