@@ -35,7 +35,6 @@
     <main>
       <section>
         <h1>Events you are hosting</h1>
-        <h2>Event Name: </h2>
         <?php
           require_once 'PHP files/dbh.inc.php';
 
