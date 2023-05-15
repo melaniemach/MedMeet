@@ -23,11 +23,7 @@ if(isset($_POST["feditnameb"])){
     
     header("location: ../docotorprofile.php?error=none");
 }
-else{
-    header("location: ../docotorprofile.php");
-    exit();
-}
-if(isset($_POST["feditnameb"])){
+elseif(isset($_POST["feditnameb"])){
     $name = $_POST["leditname"];
     $did = $_SESSION["did"];
     $email = $_SESSION["demail"];
@@ -49,11 +45,7 @@ if(isset($_POST["feditnameb"])){
     
     header("location: ../docotorprofile.php?error=none");
 }
-else{
-    header("location: ../docotorprofile.php");
-    exit();
-}
-if(isset($_POST["editemailb"])){
+elseif(isset($_POST["editemailb"])){
     $demail = $_POST["editemail"];
     $did = $_SESSION["did"];
     $pass = $_SESSION["pass"];
@@ -74,11 +66,7 @@ if(isset($_POST["editemailb"])){
     updateDoctor($conn, $demail, $pass);
     header("location: ../docotorprofile.php?error=none");
 }
-else{
-    header("location: ../docotorprofile.php");
-    exit();
-}
-if(isset($_POST["editcityb"])){
+elseif(isset($_POST["editcityb"])){
     $city = $_POST["editcity"];
     $did = $_SESSION["did"];
     $email = $_SESSION["demail"];
@@ -100,11 +88,7 @@ if(isset($_POST["editcityb"])){
     updateDoctor($conn, $email, $pass);
     header("location: ../docotorprofile.php?error=none");
 }
-else{
-    header("location: ../docotorprofile.php");
-    exit();
-}
-if(isset($_POST["editzipb"])){
+elseif(isset($_POST["editzipb"])){
     $zip = $_POST["editzip"];
     $did = $_SESSION["did"];
     $email = $_SESSION["demail"];
@@ -126,11 +110,7 @@ if(isset($_POST["editzipb"])){
     updateDoctor($conn, $email, $pass);
     header("location: ../docotorprofile.php?error=none");
 }
-else{
-    header("location: ../docotorprofile.php");
-    exit();
-}
-if(isset($_POST["editpassb"])){
+elseif(isset($_POST["editpassb"])){
     $pass = $_POST["editpass"];
     $did = $_SESSION["did"];
     $email = $_SESSION["demail"];

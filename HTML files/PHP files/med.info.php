@@ -23,11 +23,7 @@ if(isset($_POST["editnameb"])){
     
     header("location: ../medicalprofile.php?error=none");
 }
-else{
-    header("location: ../medicalprofile.php");
-    exit();
-}
-if(isset($_POST["editemailb"])){
+elseif(isset($_POST["editemailb"])){
     $oemail = $_POST["editemail"];
     $oid = $_SESSION["oid"];
     $pass = $_SESSION["pass"];
@@ -48,11 +44,7 @@ if(isset($_POST["editemailb"])){
     updateOffice($conn, $oemail, $pass);
     header("location: ../medicalprofile.php?error=none");
 }
-else{
-    header("location: ../medicalprofile.php");
-    exit();
-}
-if(isset($_POST["editfieldb"])){
+elseif(isset($_POST["editfieldb"])){
     $field = $_POST["editfield"];
     $oid = $_SESSION["oid"];
     $email = $_SESSION["oemail"];
@@ -74,11 +66,7 @@ if(isset($_POST["editfieldb"])){
     updateOffice($conn, $email, $pass);
     header("location: ../medicalprofile.php?error=none");
 }
-else{
-    header("location: ../medicalprofile.php");
-    exit();
-}
-if(isset($_POST["editcityb"])){
+elseif(isset($_POST["editcityb"])){
     $city = $_POST["editcity"];
     $oid = $_SESSION["oid"];
     $email = $_SESSION["oemail"];
@@ -100,11 +88,7 @@ if(isset($_POST["editcityb"])){
     updateOffice($conn, $email, $pass);
     header("location: ../medicalprofile.php?error=none");
 }
-else{
-    header("location: ../medicalprofile.php");
-    exit();
-}
-if(isset($_POST["editzipb"])){
+elseif(isset($_POST["editzipb"])){
     $zip = $_POST["editzip"];
     $oid = $_SESSION["oid"];
     $email = $_SESSION["oemail"];
@@ -126,11 +110,7 @@ if(isset($_POST["editzipb"])){
     updateOffice($conn, $email, $pass);
     header("location: ../medicalprofile.php?error=none");
 }
-else{
-    header("location: ../medicalprofile.php");
-    exit();
-}
-if(isset($_POST["editpassb"])){
+elseif(isset($_POST["editpassb"])){
     $pass = $_POST["editpass"];
     $oid = $_SESSION["oid"];
     $email = $_SESSION["oemail"];

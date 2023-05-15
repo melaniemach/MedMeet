@@ -64,7 +64,7 @@
             . "</form>";
           }
           else{
-            echo "<form action='docotorprofile.php' method='POST'>"
+            echo "<form action='doctorprofile.php' method='POST'>"
             . "<button name='emailedit' type='edit' class='button-edit'>Edit Doctor Email</button>"
             . "</form>";
           }
@@ -85,7 +85,7 @@
               . "</form>";
             }
             else{
-              echo "<form action='docotorprofile.php' method='POST'>"
+              echo "<form action='doctorprofile.php' method='POST'>"
               . "<button name='cityedit' type='edit' class='button-edit'>Edit Doctor City</button>"
               . "<button name='zipedit' type='edit' class='button-edit'>Edit Doctor Zip</button>"
               . "</form>";
@@ -94,12 +94,12 @@
             <p>Password: <?php echo $_SESSION["pass"]; 
             if(isset($_POST["passedit"])){
               echo "<form action='PHP files/doc.info.php' method='POST'>"
-              . "<input type='text' name='editpass' placeholder='New Doctor Password' required>"
+              . "<input type='password' name='editpass' placeholder='New Doctor Password' required>"
               . "<button name='editpassb' type='edit' class='button-edit'>Save New Doctor Password</button>"
               . "</form>";
             }
             else{
-              echo "<form action='docotorprofile.php' method='POST'>"
+              echo "<form action='doctorprofile.php' method='POST'>"
               . "<button name='passedit' type='edit' class='button-edit'>Edit Doctor Password</button>"
               . "</form>";
             }
