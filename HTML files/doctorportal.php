@@ -143,7 +143,7 @@
         else{
           echo "<h3> 0 results </h3>";
         }
-
+        mysqli_close($conn);
         ?>
       </table>
     </main>

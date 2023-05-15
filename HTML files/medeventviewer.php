@@ -62,6 +62,7 @@
               ."</tr> </table> <br>";
             }
           }
+          mysqli_close($conn);
         ?>
     </main>
 </body>

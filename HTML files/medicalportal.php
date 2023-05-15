@@ -61,6 +61,7 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
+                      $mname = $row2["mname"];
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
@@ -78,6 +79,7 @@
                   
                   echo '<tr>';
                   echo '<td>' . $row1["names"] . '</td>';
+                  echo '<td>' . $mname . '</td>';
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
@@ -139,6 +141,7 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
+                      $mname = $row2["mname"];
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
@@ -155,6 +158,7 @@
                   }
                   echo '<tr>';
                   echo '<td>' . $row1["names"] . '</td>';
+                  echo '<td>' . $mname . '</td>';
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
@@ -173,7 +177,7 @@
         else{
           echo "<h3> 0 results </h3>";
         }
-
+        mysqli_close($conn);
         ?>
       </table>
     </main>
