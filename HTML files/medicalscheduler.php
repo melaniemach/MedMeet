@@ -69,6 +69,18 @@
   
   </form>
 
+  <script>
+    // Retrieve the error message from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    // Display the error message if it exists
+    if (error === 'none') {
+        alert('Event created.');
+    } else {
+        alert('Wrong information. Please try again.');
+    }
+  </script>
 </body>
 
 </html>
