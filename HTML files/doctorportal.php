@@ -76,8 +76,7 @@
               echo "<td>
                     <form action='PHP files/event.doctor.handler.php' method='POST'>
                       <input type='hidden' name='pid' value='$pid'>
-                        <button name='approve' value='approve' class='button-approve'>Approve</button>
-                        <button name='cancel' value='cancel' class='button-cancel'>Cancel</button>
+                      <button name='cancel' value='cancel' class='button-cancel'>Cancel</button>
                     </form>
                   </td>";
               echo '</tr>';

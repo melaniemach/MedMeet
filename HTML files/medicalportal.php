@@ -36,7 +36,6 @@
       
       <section>
       <h1>Pending Events Requests</h1>
-      <h2>Event Name: </h2>
       </section>
         <?php
 
@@ -61,7 +60,7 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
-                      echo $row2["mname"] .": ";
+                      echo "<h2>Event Name: " . $row2["mname"] ." </h2>";
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
@@ -81,7 +80,12 @@
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
-                  echo "<td><form action='PHP files/event.medical.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='accept' value ='accept' class='button-accept'>ACCEPT</button><form action='PHP files/event.medical.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+                  echo "<td><form action='PHP files/event.medical.handler.php' method='POST'>
+                          <input type='hidden' name='pid' value='$pid'>
+                          <button name='accept' value ='accept' class='button-approve'>Accept</button>
+                          <form action='PHP files/event.medical.handler.php' method='POST'>
+                          <input type='hidden' name='pid' value='$pid'>
+                          <button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
                   echo '</tr>';
                 }
                 
@@ -99,13 +103,15 @@
 
         ?>
       </table>
+
+      
         <?php
 
         require_once 'PHP files/dbh.inc.php';
         
         echo '<section>
       <h1>Current Event Participants</h1>
-      <h2>Event Name:' . $row2["mname"] . ': </h2>
+    
       </section>';
         $oid = $_SESSION["oid"];
 
@@ -126,6 +132,7 @@
                   $retval2=mysqli_query($conn, $sql2);
                   if(mysqli_num_rows($retval1) > 0){
                     while($row2 = mysqli_fetch_assoc($retval2)){
+                      echo " <h2>Event Name: " . $row2["mname"] . " </h2>";
                       echo "<table id='eventsTable'>"
                       . "<tr>"
                       .  "<th>From</th>"
@@ -145,7 +152,10 @@
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
-                  echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'><input type='hidden' name='pid' value='$pid'><button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+                  echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'>
+                          <input type='hidden' name='pid' value='$pid'>
+                          <button name='cancel' value ='cancel' class='button-cancel'>Cancel</button>
+                        </td>";
                   echo '</tr>';
                 }
                 
