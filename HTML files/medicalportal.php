@@ -25,6 +25,7 @@
           <ul>
             <li><a href="medicalportal.php">PORTAL</a></li>
             <li><a href="medicalscheduler.php">EVENT SCHEDULER</a></li>
+            <li><a href="medeventviewer.php">EVENT VIEWER</a></li>
             <li><a href="medicalprofile.php">PROFILE</a></li>
             <li><a href="../HTML files/PHP files/logout.inc.php">LOG OUT</a></li>
           </ul>
@@ -67,26 +68,22 @@
                       .  "<th>Date & Time</th>"
                       .  "<th>City & Zip</th>"
                       .  "<th>Your Message</th>"
-                      .  "<th>Action</th>"
+                      .  "<th>Status</th>"
                       .  "</tr>";
                     }
                   }
                   else{
                     echo "<h3> 0 results </h3>";
                   }
-                  $pid = $row1["pid"];
+                  
                   echo '<tr>';
                   echo '<td>' . $row1["names"] . '</td>';
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
-                  echo "<td><form action='PHP files/event.medical.handler.php' method='POST'>
-                          <input type='hidden' name='pid' value='$pid'>
-                          <button name='accept' value ='accept' class='button-approve'>Accept</button>
-                          <form action='PHP files/event.medical.handler.php' method='POST'>
-                          <input type='hidden' name='pid' value='$pid'>
-                          <button name='cancel' value ='cancel' class='button-cancel'>Cancel</button></td>";
+                  echo '<td>' . $row1["stat"] . '</td>';
                   echo '</tr>';
+                  
                 }
                 
               }
@@ -139,23 +136,19 @@
                       .  "<th>Date & Time</th>"
                       .  "<th>City & Zip</th>"
                       .  "<th>Your Message</th>"
-                      .  "<th>Action</th>"
+                      .  "<th>Status</th>"
                       .  "</tr>";
                     }
                   }
                   else{
                     echo "<h3> 0 results </h3>";
                   }
-                  $pid = $row1["pid"];
                   echo '<tr>';
                   echo '<td>' . $row1["names"] . '</td>';
                   echo '<td>' . $row1["dateTim"] . '</td>';
                   echo '<td>' . $row1["loca"] . '</td>';
                   echo '<td>' . $row1["message"] . '</td>';
-                  echo "<td><form action='PHP files/event.doctor.handler.php' method='POST'>
-                          <input type='hidden' name='pid' value='$pid'>
-                          <button name='cancel' value ='cancel' class='button-cancel'>Cancel</button>
-                        </td>";
+                  echo '<td>' . $row1["stat"] . '</td>';
                   echo '</tr>';
                 }
                 
@@ -173,6 +166,11 @@
 
         ?>
       </table>
+      <form action="PHP files/event.medical.handler.php" method="POST">
+        <input type="text" placeholder="Full Name" name="names">
+        <button name="accept" class="button-approve" type="accept">ACCEPT</button>
+        <button name="cancel" class="button-cancel" type="cancel">CANCEL</button>
+      </form>
     </main>
 
     <footer>

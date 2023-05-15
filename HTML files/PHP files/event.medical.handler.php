@@ -2,11 +2,10 @@
 session_start();
 
 if (isset($_POST["cancel"])) {
-    $pid = $_POST["pid"];
-
+    $names = $_POST["names"];
     require_once 'dbh.inc.php';
 
-    $sql = "DELETE FROM participants WHERE pid = $pid";
+    $sql = "DELETE FROM participants WHERE names = '$names'";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../medicalportal.php?error=stmtfailed");
@@ -18,11 +17,10 @@ if (isset($_POST["cancel"])) {
     header("location: ../medicalportal.php?error=none");
 }
 elseif(isset($_POST["accept"])){
-    $pid = $_POST["pid"];
-
+    $names = $_POST["names"];
     require_once 'dbh.inc.php';
     
-    $sql = "UPDATE participants SET `stat` = 'APPROVED' WHERE pid = $pid";
+    $sql = "UPDATE participants SET `stat` = 'APPROVED' WHERE names LIKE '$names'";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../medicalportal.php?error=stmtfailed");
@@ -33,6 +31,7 @@ elseif(isset($_POST["accept"])){
     mysqli_stmt_close($stmt);
     header("location: ../medicalportal.php?error=none");
 }
+
 else {
     header("location: ../medicalportal.php");
 }   
