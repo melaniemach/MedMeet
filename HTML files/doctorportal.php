@@ -57,6 +57,7 @@
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"
+                  .  "<th>Meeting Name</th>"
                   .  "<th>Date & Time</th>"
                   .  "<th>City & Zip</th>"
                   .  "<th>Your Message</th>"
@@ -70,6 +71,7 @@
               $pid = $row["pid"];
               echo '<tr>';
               echo '<td>' . $row["names"] . '</td>';
+              echo '<td>' . $row1["mname"] . '</td>';
               echo '<td>' . $row["dateTim"] . '</td>';
               echo '<td>' . $row["loca"] . '</td>';
               echo '<td>' . $row["message"] . '</td>';
@@ -114,6 +116,7 @@
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"
+                  .  "<th>Meeting Name</th>"
                   .  "<th>Date & Time</th>"
                   .  "<th>City & Zip</th>"
                   .  "<th>Your Message</th>"
@@ -127,6 +130,7 @@
               $pid = $row["pid"];
               echo '<tr>';
               echo '<td>' . $row["names"] . '</td>';
+              echo '<td>' . $row["mname"] . '</td>';
               echo '<td>' . $row["dateTim"] . '</td>';
               echo '<td>' . $row["loca"] . '</td>';
               echo '<td>' . $row["message"] . '</td>';
