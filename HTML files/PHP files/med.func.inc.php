@@ -150,3 +150,34 @@ function createMeeting($conn,$mname,$oid,$city,$zip,$desc,$time_start,$time_end,
 
 }
 
+function updateOffice($conn, $email, $pass){
+    session_start(); // Start the session
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
+    
+    $emailExisted = emailExists($conn, $email);
+    
+    if($emailExisted === false){
+        header("location: ../medicalprofile.php?error=updatefailede");
+        exit();
+    }
+
+    $storedPass = $emailExisted["pass"];
+    if($pass !== $storedPass){
+        header("location: ../medicallogin.html?error=updatefailedp");
+    }
+    else if($pass === $storedPass){
+        session_start();
+        $_SESSION["oid"] = $emailExisted["oid"];
+        $_SESSION["oemail"] = $emailExisted["oemail"];
+        $_SESSION["oname"] = $emailExisted["oname"];
+        $_SESSION["city"] = $emailExisted["city"];
+        $_SESSION["zip"] = $emailExisted["zip"];
+        $_SESSION["pass"] = $emailExisted["pass"];
+        //not sure if this is needed?
+        $_SESSION["field"] = $emailExisted["field"];
+        header("location: ../medicalprofile.php");
+        exit();
+    }
+
+}

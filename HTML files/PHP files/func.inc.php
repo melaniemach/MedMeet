@@ -147,3 +147,35 @@ function createParticpant($conn, $mid, $did , $name, $loca, $mess, $stat){
     header("location: ../doctorsearch.php?error=none");
 
 }
+
+function updateDoctor($conn, $email, $pass){
+    session_start(); // Start the session
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
+
+
+    $emailExisted = emailExists($conn, $email);
+    
+    if($emailExisted === false){
+        header("location: ../doctorprofile.php?error=updatefailede");
+        exit();
+    }
+
+    $storedPass = $emailExisted["pass"];
+    if($pass !== $storedPass){
+        header("location: ../doctorprofile.php?error=updatefailedp");
+    }
+    else if($pass === $storedPass){
+        session_start();
+        $_SESSION["did"] = $emailExisted["did"];
+        $_SESSION["demail"] = $emailExisted["demail"];
+        $_SESSION["fname"] = $emailExisted["fname"];
+        $_SESSION["lname"] = $emailExisted["lname"];
+        $_SESSION["city"] = $emailExisted["city"];
+        $_SESSION["zip"] = $emailExisted["zip"];
+        $_SESSION["pass"] = $emailExisted["pass"];
+        header("location: ../doctorprofile.php");
+        exit();
+    }
+
+}
