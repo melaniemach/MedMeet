@@ -164,7 +164,7 @@ function updateOffice($conn, $email, $pass){
 
     $storedPass = $emailExisted["pass"];
     if($pass !== $storedPass){
-        header("location: ../medicallogin.html?error=updatefailedp");
+        header("location: ../medicalprofile.php?error=updatefailedp");
     }
     else if($pass === $storedPass){
         session_start();

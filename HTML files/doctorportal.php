@@ -53,6 +53,7 @@
               $retval1=mysqli_query($conn, $sql1);
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
+                  $mname = $row1["mname"];
                   echo "<h2>Event Name: " . $row1["mname"] . "</h2>";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
@@ -71,7 +72,7 @@
               $pid = $row["pid"];
               echo '<tr>';
               echo '<td>' . $row["names"] . '</td>';
-              echo '<td>' . $row1["mname"] . '</td>';
+              echo '<td>' . $mname . '</td>';
               echo '<td>' . $row["dateTim"] . '</td>';
               echo '<td>' . $row["loca"] . '</td>';
               echo '<td>' . $row["message"] . '</td>';
@@ -112,6 +113,7 @@
               $retval1=mysqli_query($conn, $sql1);
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
+                  $mname = $row1["mname"];
                   echo "<h2>Event Name: " . $row1["mname"] ." </h2> ";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
@@ -130,7 +132,7 @@
               $pid = $row["pid"];
               echo '<tr>';
               echo '<td>' . $row["names"] . '</td>';
-              echo '<td>' . $row["mname"] . '</td>';
+              echo '<td>' . $mname . '</td>';
               echo '<td>' . $row["dateTim"] . '</td>';
               echo '<td>' . $row["loca"] . '</td>';
               echo '<td>' . $row["message"] . '</td>';

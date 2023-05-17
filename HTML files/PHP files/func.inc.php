@@ -13,17 +13,6 @@ function invalidfname($fname){
     return $result;
 }
 
-// Function to check if the other name is invalid (contains only letters)
-function invalidoname($oname){
-    if(!preg_match("/^[a-zA-Z]*$/", $oname)){
-        $result = true;
-    }
-    else{
-        $result = false;
-    }
-    return $result;
-}
-
 // Function to check if a field is invalid (contains only letters)
 function invalidfield($field){
     if(!preg_match("/^[a-zA-Z]*$/", $field)){

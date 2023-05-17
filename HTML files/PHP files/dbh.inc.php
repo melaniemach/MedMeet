@@ -3,7 +3,7 @@
 $serverName = "localhost";
 $dBUserName = "root";
 $dBPassword = "";
-$dBName = "finalproject";
+$dBName = "finalprojectSantiagoZMelanieM";
 
 $conn = mysqli_connect($serverName,$dBUserName,$dBPassword);
 // Test MySQLi connection
@@ -73,4 +73,6 @@ else
     // Displays an error message if the table creation fails
     echo "Could not create doctor: ". mysqli_error($conn);
 }
+
+
 ?>
