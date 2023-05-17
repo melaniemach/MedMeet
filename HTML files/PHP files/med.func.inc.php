@@ -2,17 +2,6 @@
 
 require_once 'dbh.inc.php'; // Include the database connection file
 
-// Function to check if the first name is invalid (contains only letters)
-function invalidfname($fname){
-    if(!preg_match("/^[a-zA-Z]*$/", $fname)){
-        $result = true;
-    }
-    else{
-        $result = false;
-    }
-    return $result;
-}
-
 // Function to check if the other name is invalid (contains only letters)
 function invalidoname($oname){
     if(!preg_match("/^[a-zA-Z]*$/", $oname)){
@@ -35,16 +24,6 @@ function invalidfield($field){
     return $result;
 }
 
-// Function to check if the last name is invalid (contains only letters)
-function invalidlname($lname){
-    if(!preg_match("/^[a-zA-Z]*$/", $lname)){
-        $result = true;
-    }
-    else{
-        $result = false;
-    }
-    return $result;
-}
 
 // Function to check if the email is invalid
 function invalidemail($email){

@@ -66,36 +66,57 @@
         <button type="submit" name="submit" class="button" value="Register">Register</button>
   </div>
 </form>
-          
-        <form action="../HTML files/PHP files/signup.medical.inc.php" method="POST">
-            <div class="form-header">
-                <h3>Medical Office Sign Up</h3>
-                <p>Sign up with your information</p>
-            </div>
-        
-            <!--Heading for login form-->
-            <div class="form-container">
-                <!--Office name-->
-                <label for="officename">Office Name</label>
-                <input type="text" name="officename" placeholder="Enter Your Office Name" class="textbox" id="officename" required>
-                <!--Email-->
-                <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Enter Your Email" class="textbox" id="email" required> <br>
-                <!--Password-->
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br>
-                <!--Field-->
-                <label for="field">Field</label>
-                <input type="text" name="field" placeholder="Enter Your Field" class="textbox" id="field" required>
-                <!--City and ZIP code-->
-                <label for="city">City</label>
-                <input type="text" name="city" placeholder="Enter Your City" class="textbox" id="city" required>
-                <label for="ZIP">Postal Code</label>
-                <input type="text" name="postalcode" placeholder="Enter Your 5-digit Postal Code" class="textbox" id="postalcode" required>
-                <!--Submit button-->
-                <button type="submit" name="submit" class="button" value="Register">Register</button>
-        </div> 
-        
-	</body>
+  <form action="../HTML files/PHP files/signup.medical.inc.php" method="POST">
+    <div class="form-header">
+        <h3>Medical Office Sign Up</h3>
+        <p>Sign up with your information</p>
+    </div>
+
+    <!--Heading for login form-->
+    <div class="form-container">
+        <!--Office name-->
+        <label for="officename">Office Name</label>
+        <input type="text" name="officename" placeholder="Enter Your Office Name" class="textbox" id="officename" required>
+        <!--Email-->
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Enter Your Email" class="textbox" id="email" required> <br>
+        <!--Password-->
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter Your Password" class="textbox" id="password" required></br>
+        <!--Field-->
+        <label for="field">Field</label>
+        <input type="text" name="field" placeholder="Enter Your Field" class="textbox" id="field" required>
+        <!--City and ZIP code-->
+        <label for="city">City</label>
+        <input type="text" name="city" placeholder="Enter Your City" class="textbox" id="city" required>
+        <label for="ZIP">Postal Code</label>
+        <input type="text" name="postalcode" placeholder="Enter Your 5-digit Postal Code" class="textbox" id="postalcode" required>
+        <!--Submit button-->
+        <button type="submit" name="submit" class="button" value="Register">Register</button>
+    </div> 
+  </form>
+
+  <script>
+    // Retrieve the error message from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    // Display the error message if it exists
+    if (error === 'none') {
+        alert('Sign up complete!');
+    } else if (error === 'invalidoname') {
+        alert('Please enter a valid office name.');
+    }else if (error === 'invalidfield') {
+        alert('Please enter a valid field name.');
+    }else if (error === 'invalidemail') {
+        alert('Please enter a valid email address.');
+    }else if (error === 'emailtaken') {
+        alert('Email exists. Please sign in.');
+    }else if (error ==='stmtfailed'){
+        alert('ERROR: Sign up failed. Please try again.');
+    }
+  </script>
+
+</body>
 </html>
 

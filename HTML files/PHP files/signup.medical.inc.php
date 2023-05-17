@@ -13,11 +13,11 @@ if (isset($_POST["submit"])) {
     require_once 'med.func.inc.php'; // Include the medical function file
 
     if (invalidoname($oname) !== false) { // Check if the office name is invalid
-        header("location: ../medicalsu.html?error=invalidfname"); // Redirect with an error message for invalid office name
+        header("location: ../medicalsu.html?error=invalidoname"); // Redirect with an error message for invalid office name
         exit();
     }
     if (invalidfield($field) !== false) { // Check if the field is invalid
-        header("location: ../medicalsu.html?error=invalidlname"); // Redirect with an error message for invalid field
+        header("location: ../medicalsu.html?error=invalidfield"); // Redirect with an error message for invalid field
         exit();
     }
     // Check if the email is invalid

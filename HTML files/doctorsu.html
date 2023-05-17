@@ -73,6 +73,27 @@
     </div>
   
   </form>
+  <script>
+    // Retrieve the error message from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+
+    // Display the error message if it exists
+    if (error === 'none') {
+        alert('Sign up complete!');
+    } else if (error === 'invalidfname') {
+        alert('Please enter a valid first name.');
+    }else if (error === 'invalidlname') {
+        alert('Please enter a valid last name.');
+    }else if (error === 'invalidemail') {
+        alert('Please enter a valid email address.');
+    }else if (error === 'emailtaken') {
+        alert('Email exists. Please sign in.');
+    }else if (error ==='stmtfailed'){
+        alert('ERROR: Sign up failed. Please try again.');
+    }
+  </script>
+
 </body>
 
 </html>
