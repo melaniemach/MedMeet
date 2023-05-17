@@ -87,7 +87,7 @@ function createDoctor($conn,$fname,$lname,$email,$pass,$city,$zip){
     mysqli_stmt_bind_param($stmt, "ssssss", $fname, $lname, $email, $pass, $city, $zip);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../doctorsu.html?error=none");
+    header("location: ../index.php?error=none");
 
 }
 

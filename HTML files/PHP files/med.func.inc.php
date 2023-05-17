@@ -77,7 +77,7 @@ function createOffice($conn,$oname,$email,$pass,$field,$city,$zip){
     mysqli_stmt_bind_param($stmt, "ssssss", $oname, $email, $pass, $field, $city, $zip);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../medicalsu.html?error=none");
+    header("location: ../index.php?error=none");
 
 }
 
