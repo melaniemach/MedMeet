@@ -54,7 +54,6 @@
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
                   $mname = $row1["mname"];
-                  echo "<h2>Event Name: " . $row1["mname"] . "</h2>";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"
@@ -114,7 +113,6 @@
               if(mysqli_num_rows($retval1) > 0){
                 while($row1 = mysqli_fetch_assoc($retval1)){
                   $mname = $row1["mname"];
-                  echo "<h2>Event Name: " . $row1["mname"] ." </h2> ";
                   echo "<table id='eventsTable'>"
                   . "<tr>"
                   .  "<th>From</th>"

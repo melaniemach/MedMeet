@@ -62,10 +62,10 @@
     }
 
     if($total == 0) {
-      $fname = "Joe";
-      $lname = "Mama";
-      $email = "joedoctor@test.com";
-      $pass = "joe123";
+      $fname = "Mike";
+      $lname = "Hawk";
+      $email = "mikedoctor@test.com";
+      $pass = "mike123";
       $city = "Fullerton";
       $zip = "92831";
       $sql ="INSERT INTO doctors (fname, lname, demail, pass, city, zip) VALUES (?, ?, ?, ?, ?, ?);";
